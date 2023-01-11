@@ -1,0 +1,24 @@
+:root {
+    --olaf-font: 'Chakra Petch', sans-serif;
+    --olaf-orange: #ff8c00;
+    --olaf-red: #cc3333;
+    --olaf-violet: #b740bf;
+    --olaf-blue: #404fbf;
+    --olaf-turquoise: #4db3a0;
+    
+    /* c0 is hexadecimal for 75 percent */
+    /* 9a is hexadecimal for 60 percent */
+    /* 80 is hexadecimal for 50 percent */
+    /* 40 is hexadecimal for 25 percent */
+    --olaf-orange-highlight: #ff8c0040;
+    --olaf-red-highlight: #cc333340;
+    --olaf-violet-highlight: #b740bf40;
+    --olaf-blue-highlight: #404fbf40;
+    --olaf-turquoise-highlight: #4db3a040;
+    
+    --olaf-orange-hover: #ff8c00c0;
+    --olaf-red-hover: #cc3333c0;
+    --olaf-violet-hover: #b740bfc0;
+    --olaf-blue-hover: #404fbfc0;
+    --olaf-turquoise-hover: #4db3a0c0;
+}
