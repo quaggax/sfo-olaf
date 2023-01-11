@@ -10,21 +10,6 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/root.css">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
-    <style>
-        @media (min-width: 1200px) {
-            #nav-site {
-                position: -webkit-fixed;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 10;
-            }
-            #nav-site-container {
-                height: 100vh;
-                overflow: scroll;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -36,16 +21,16 @@
                     This is also handy because the #nav-site element gets its width defined through its col class (this is a defined width). This allows free positioning of the #nav-site-container inside that pre-defined box (#nav-site).
                 -->
                 <div id="nav-site-container" class="d-xl-flex flex-column text-xl-start text-center">
-                    <div class="navbar-logo text-center">
+                    <a href="" id="navbar-logo" class="text-center">
                         <img src="assets/images/oLaF_v1.png" alt="oLaF Logo">
                         <p class="h1">oLaF <em>SFO</em></p>
-                    </div>
+                    </a>
                     <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <div class="navbar-toggler-icon"></div>
                     </button>
                     <!-- navbar toggler for mobile -->
                     <div id="navbarNav" class="collapse navbar-collapse flex-column">
-                        <ul id="olaf-nav" class="navbar-nav flex-xl-column w-100 mb-auto">
+                        <ul id="olaf-nav" class="navbar-nav flex-xl-column w-100 mx-auto mb-auto">
                             <li class="nav-item first">
                                 <a href="" class="nav-link active">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
@@ -87,17 +72,20 @@
 
                             </li>
                         </ul>
-                        <ul id="olaf-links" class="navbar-nav flex-xl-column w-100 mb-2">
-                            <li class="nav-item">
-                                <a href="https://maker.schule" target="_blank" class="nav-link external">maker.schule</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://stein.schule" target="_blank" class="nav-link external">stein.schule</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">Impressum</a>
-                            </li>
-                        </ul>
+                        <footer id="footer" class="navbar-nav flex-xl-column flex-row flex-wrap justify-content-center pt-1 mb-2">
+                            <span class="footer-item">
+                                <a href="https://maker.schule" target="_blank" class="external">maker.schule</a>
+                            </span>
+                            <span class="footer-item">
+                                <a href="https://stein.schule" target="_blank" class="external">stein.schule</a>
+                            </span>
+                            <span class="footer-item">
+                                <a href="">Impressum</a>
+                            </span>
+                            <span id="footer-copyright" class="footer-item w-100">
+                                &copy; 2023 oLaFF
+                            </span>
+                        </footer>
                     </div>
                     <!-- end navbarNav -->
                 </div>
@@ -120,8 +108,11 @@
                         </p>
                     </section>
                     <section id="welcome">
-                        <h1 class="display-1">Machen ist wie wollen, nur krasser!</h1>
-                        <img src="assets/images/banner.png" alt="" class="slanted-corners" width="100%">
+                        <div id="welcome-container" class="d-flex align-items-end p-3 pb-2 mb-3 slanted-corners">
+                            <div id="welcome-text">
+                                <p class="display-3 olaf-font m-0">Machen ist wie wollen, nur krasser!</p>
+                            </div>
+                        </div>
                         <p>
                             Das oLaF ist ein Makerspace für Schüler/-innen, ein Ort der Begegnung und des freien Lernens. Jeder ist willkommen sich im MINT-Bereich weiterzubilden oder einfach zu experimentieren
                         </p>
