@@ -10,22 +10,42 @@
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/root.css">
     <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <style>
+        @media (min-width: 1200px) {
+            #nav-site {
+                position: -webkit-fixed;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 10;
+            }
+            #nav-site-container {
+                height: 100vh;
+                overflow: scroll;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container g-0">
+    <div class="">
         <div class="row g-0">
-            <nav id="nav-site" class="navbar navbar-expand-xl col-xl-2 text-start justify-content-center">
-                <div class="flex-column g-0 h-100 text-xl-start text-center">
-                    <div class="navbar-logo d-flex flex-column justify-content-center my-3 mx-0 w-100">
+            <nav id="nav-site" class="navbar navbar-expand-xl col-xl-3 align-items-start justify-content-center p-0">
+                <!--
+                    The following div (#nav-site-container) is here so that the following items naturally have the same width as the image.
+                    This is also handy because the #nav-site element gets its width defined through its col class (this is a defined width). This allows free positioning of the #nav-site-container inside that pre-defined box (#nav-site).
+                -->
+                <div id="nav-site-container" class="d-xl-flex flex-column text-xl-start text-center">
+                    <div class="navbar-logo text-center">
                         <img src="assets/images/oLaF_v1.png" alt="oLaF Logo">
-                        <p class="h1 mx-auto">oLaF <em>SFO</em></p>
+                        <p class="h1">oLaF <em>SFO</em></p>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <div class="navbar-toggler-icon"></div>
                     </button>
                     <!-- navbar toggler for mobile -->
-                    <div id="navbarNav" class="collapse navbar-collapse flex-column justify-content-xl-between">
-                        <ul id="olaf-nav" class="navbar-nav flex-xl-column w-100">
+                    <div id="navbarNav" class="collapse navbar-collapse flex-column">
+                        <ul id="olaf-nav" class="navbar-nav flex-xl-column w-100 mb-auto">
                             <li class="nav-item first">
                                 <a href="" class="nav-link active">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
@@ -60,14 +80,17 @@
                             <li class="nav-item last">
                                 <a href="" class="nav-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
-  <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-</svg>
+                                        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                                    </svg>
                                     Förderverein
                                 </a>
 
                             </li>
                         </ul>
-                        <ul id="olaf-links" class="navbar-nav flex-xl-column w-100">
+                        <ul id="olaf-links" class="navbar-nav flex-xl-column w-100 mb-2">
+                            <li class="nav-item">
+                                <a href="https://maker.schule" target="_blank" class="nav-link external">maker.schule</a>
+                            </li>
                             <li class="nav-item">
                                 <a href="https://stein.schule" target="_blank" class="nav-link external">stein.schule</a>
                             </li>
@@ -79,9 +102,10 @@
                     <!-- end navbarNav -->
                 </div>
             </nav>
-            <div class="col-xl-8">
-                <div class="m-3 ms-4">
-                    
+            <div class="col-xl-3"></div>
+            <div class="col-xl-6">
+                <div class="mx-3 mb-3 mt-0 mt-xl-3">
+
                     <section class="alerts">
                         <h2 class="d-none">Ankündigungen</h2>
                         <p id="opening-hours">
@@ -96,27 +120,27 @@
                         </p>
                     </section>
                     <section id="welcome">
-                        <h1 class="display-1">catchphrase</h1>
-                        <img src="assets/images/banner.png" alt="" width="100%">
+                        <h1 class="display-1">Machen ist wie wollen, nur krasser!</h1>
+                        <img src="assets/images/banner.png" alt="" class="slanted-corners" width="100%">
                         <p>
                             Das oLaF ist ein Makerspace für Schüler/-innen, ein Ort der Begegnung und des freien Lernens. Jeder ist willkommen sich im MINT-Bereich weiterzubilden oder einfach zu experimentieren
                         </p>
                     </section>
                     <section id="future-events">
-                        <h3>Aktuelle Planung</h3>
+                        <h3>Zukunft</h3>
                     </section>
                     <section id="past-events">
-                        <h3>Ereignisse</h3>
+                        <h3>Vergangenheit</h3>
                         <article>
-                            <h4>dc3.chaos.schule</h4>
+                            <h4></h4>
                         </article>
                         <article>
-                            <h4>Xmake kurz vor Xmas</h4>
+                            <h4></h4>
                         </article>
                     </section>
                 </div>
             </div>
-            <div class="col-xl-2">
+            <div class="col-xl-3">
 
             </div>
         </div>
@@ -124,5 +148,4 @@
     </div>
 
     <script src="assets/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</body></html>

@@ -1,14 +1,25 @@
-**To-do Liste**
-- [] Neue Struktur für die Landing Page ausdenken
-    - [] die Überschrift auf das Bild legen (unterer Rand)
-    - [] kurze & knackige Beschreibung des oLaF unter das Bild
-    - [] 'Cards' für Events gestalten (mit Link zu öffnen & Möglichkeit für Bilder, aber primär nur Text)
-    - [] Future Events und Past Events subtil (nicht zu viel Platz) kennzeichnen
-- [] Breadcrumb oben in der Mitte über der horzontalen Linie hinzufügen (außer Landing Page, quasi anstatt der Alerts)
+## WIP olaf.one Update
+This is a Work in Progress draft of an updated olaf.one website.
+
+---
+
+### To-do Liste
+- [ ] Merge new CSS to stylesheet (index_old.html will probably break)
+- [ ] Turn logo and site name into a link (to home page)
+- [ ] New structure for landing page
+    - [ ] Place heading over the image (aligned to bottom)
+    - [ ] short & precise text about oLaF as introduction below the picture
+    - [ ] Design 'Cards' for Events (include link to page & possibility for images; text should be primary focus)
+    - [ ] Seperate Future Events and Past Events in a subtle way (shouldn't use too much space)
+- [ ] Add Breadcrumb in the top middle above the horizontal line (except home page; effectively instead of the alerts) (grey bg with slanted corners; orange text)
+- [ ] pay attention to notch-area on iPhone (horizontal) berücksichtigen
+- [ ] Start working on About, Projekte, Förderverein & Event pages
+- [ ] Check how to format websites for PDF when opening the print dialogue (it is possible to show, hide and reformat elements)
+    - [ ] Allows for export of Event pages -> easily print them as flyers (!! Corporate Design)
+- [ ] Add meta tag theme-color
 
 
-- [] Notch-Bereich am iPhone berücksichtigen
-- [] About, Projekte & Förderverein als Pages angehen
-- [] Nachschlagen wie man Websiten für PDF formattiert (man kann Elemente einblenden, ausblenden oder reformatieren)
-- [] Template für Events erstellen (& PDF Formatierung beachten)
-    - [] Dadurch kann MrBig die Event Page einfach als PDF speichern und ausdrucken (!! Corporate Design)
+#### Mobile
+- [ ] Navigation as horizontal navbar to save precious vertical screen space
+- [ ] Make nav-items wider
+- [ ] Differentiate extra links from nav-link (maybe using hr or border)
