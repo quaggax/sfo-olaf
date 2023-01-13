@@ -26,6 +26,6 @@ This is a Work in Progress draft of an updated olaf.one website.
 
 
 #### Mobile
-- [ ] Navigation as horizontal navbar to save precious vertical screen space
+- [x] Navigation as horizontal navbar to save precious vertical screen space
 - [x] Make nav-items wider
 - [x] Differentiate footer from nav-link (maybe using hr or border)
