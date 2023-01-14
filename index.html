@@ -26,12 +26,15 @@
                         <img src="assets/images/oLaF_v1.png" alt="oLaF Logo">
                         <p class="h1 mb-0">oLaF <em>SFO</em></p>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <div class="navbar-toggler-icon"></div>
+                    <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                                <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
+                            </svg>
+                        
                     </button>
                     <!-- navbar toggler for mobile -->
                     <div id="navbarNav" class="collapse navbar-collapse flex-column">
-                        <ul id="olaf-nav" class="navbar-nav flex-xl-column w-100 mx-auto mb-auto">
+                        <ul id="olaf-nav" class="navbar-nav flex-xl-column text-start w-100 mx-auto mb-auto">
                             <li class="nav-item first">
                                 <a href="" class="nav-link active">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
@@ -73,7 +76,8 @@
 
                             </li>
                         </ul>
-                        <footer id="footer" class="navbar-nav flex-xl-column flex-row flex-wrap justify-content-center pt-1 mb-2">
+                        <hr class="m-0">
+                        <footer id="footer" class="navbar-nav flex-xl-column flex-row flex-wrap justify-content-center">
                             <span class="footer-item">
                                 <a href="https://maker.schule" target="_blank" class="external">maker.schule</a>
                             </span>
@@ -87,26 +91,26 @@
                                 &copy; 2023 oLaFF
                             </span>
                         </footer>
+                        <hr class="m-0 d-xl-none">
                     </div>
                     <!-- end navbarNav -->
                 </div>
             </nav>
             <div class="col-xl-3"></div>
-            <div class="col-xl-6">
+            <main class="col-xl-6">
                 <div class="mx-3 mb-3 mt-0 mt-xl-3">
 
-                    <section class="alerts">
+                    <section id="announcements">
                         <h2 class="d-none">Ankündigungen</h2>
-                        <p id="opening-hours">
-                            Das oLaF ist in diesem Halbjahr wieder dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr geöffnet!
-                            <br>
+                        <div id="opening-hours" class="alert">
                             Am 04.01.2023 ab 10:00 Uhr ist oLaF in den Ferien!
-                        </p>
-                        <p>
+                        </div>
+                        <div class="alert">
                             Bald ist wieder oLaF Nacht!
                             <br>
                             Anmeldung bitte per eMail an <a href="mailto:info@olaf.one">info@olaf.one</a>
-                        </p>
+                        </div>
+                        <hr>
                     </section>
                     <section id="welcome">
                         <div id="welcome-container" class="d-flex align-items-end p-3 pb-2 mb-3 slanted-corners">
@@ -117,6 +121,9 @@
                         <p>
                             Das oLaF ist ein Makerspace für Schüler/-innen, ein Ort der Begegnung und des freien Lernens. Jeder ist willkommen sich im MINT-Bereich weiterzubilden oder einfach zu experimentieren
                         </p>
+                        <div class="alert">
+                            Das oLaF ist <b>dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr</b> geöffnet!
+                        </div>
                     </section>
                     <section id="future-events">
                         <h3>Zukunft</h3>
@@ -131,7 +138,7 @@
                         </article>
                     </section>
                 </div>
-            </div>
+            </main>
             <div class="col-xl-3">
 
             </div>

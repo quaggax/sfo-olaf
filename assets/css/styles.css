@@ -1,15 +1,19 @@
-.olaf-font {
-    font-family: var(--olaf-font);
-}
+/*
+    global adjustments
+*/
 
 ::selection {
-    background-color: var(--olaf-orange-highlight);
+    background-color: var(--olaf-orange-25);
 }
 
 :target {
-    background-color: var(--olaf-red-highlight);
+    background-color: var(--olaf-red-25);
 }
 
+
+/*
+    global tag specific adjustments
+*/
 
 h1,
 h2,
@@ -55,6 +59,23 @@ a.external::after {
     padding-left: .2rem;
 }
 
+hr {
+    height: 1px;
+    width: 100%;
+    color: var(--olaf-light-grey);
+}
+
+
+/*
+    global custom classes
+    first: specific properties/looks
+    second: entire elements/components
+*/
+
+.olaf-font {
+    font-family: var(--olaf-font);
+}
+
 .slanted-corners {
     mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
     mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
@@ -65,6 +86,90 @@ a.external::after {
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 51% 51%;
 }
+
+.btn {
+    --olaf-btn-bg-color: var(--olaf-light-grey-75);
+    font-family: var(--olaf-font);
+    font-weight: 500;
+    background-color: var(--olaf-btn-bg-color);
+    text-decoration: none;
+    mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
+    -webkit-mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
+    -webkit-mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 51% 51%;
+}
+
+.btn:hover {
+    --olaf-btn-bg-color: var(--olaf-light-grey-50);
+    background-color: var(--olaf-btn-bg-color);
+    text-decoration: none;
+}
+
+.btn-orange, .btn-accent {
+    --olaf-btn-bg-color: var(--olaf-orange-75);
+}
+
+.btn-orange:hover, .btn-accent:hover {
+    --olaf-btn-bg-color: var(--olaf-orange-50);
+}
+
+.btn-red {
+    --olaf-btn-bg-color: var(--olaf-red-75);
+}
+
+.btn-red:hover {
+    --olaf-btn-bg-color: var(--olaf-red-50);
+}
+
+.btn-violet {
+    --olaf-btn-bg-color: var(--olaf-violet-75);
+}
+
+.btn-violet:hover {
+    --olaf-btn-bg-color: var(--olaf-violet-50);
+}
+
+.btn-blue {
+    --olaf-btn-bg-color: var(--olaf-blue-75);
+}
+
+.btn-blue:hover {
+    --olaf-btn-bg-color: var(--olaf-blue-50);
+}
+
+.btn-turquoise {
+    --olaf-btn-bg-color: var(--olaf-turquoise-75);
+}
+
+.btn-turquoise:hover {
+    --olaf-btn-bg-color: var(--olaf-turquoise-50);
+}
+
+.alert {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: .5rem solid var(--olaf-grey);
+    padding: .3rem .5rem;
+    background-color: var(--olaf-grey-25);
+    mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
+    -webkit-mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
+    -webkit-mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 51% 51%;
+}
+
+
+/*
+    responsive properties
+*/
 
 /* !! max width */
 @media (max-width: 1200px) {
@@ -122,6 +227,23 @@ a.external::after {
     height: 4rem;
 }
 
+#nav-site button.btn, #nav-site button.btn:active {
+    color: var(--olaf-grey);
+    background-color: var(--olaf-light-grey-25);
+    border: none;
+}
+
+#nav-site button svg {
+    transition-duration: .3s;
+    animation-duration: .3s;
+    transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+    animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+#nav-site button[aria-expanded=true] svg {
+    transform: rotate(180deg);
+}
+
 /* bootstrap class (only added during transition) */
 #navbarNav.collapsing {
     transition-duration: .3s;
@@ -145,6 +267,7 @@ a.external::after {
     letter-spacing: .1rem;
     transition: none;
     line-height: normal;
+    padding: .5rem;
     mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
     mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
     mask-repeat: no-repeat;
@@ -167,52 +290,52 @@ a.external::after {
 
 #olaf-nav li.nav-item:nth-child(1) a.nav-link.active {
     color: #000000;
-    background-color: var(--olaf-orange-highlight);
+    background-color: var(--olaf-orange-25);
 }
 
 #olaf-nav li.nav-item:nth-child(2) a.nav-link.active {
     color: #000000;
-    background-color: var(--olaf-red-highlight);
+    background-color: var(--olaf-red-25);
 }
 
 #olaf-nav li.nav-item:nth-child(3) a.nav-link.active {
     color: #000000;
-    background-color: var(--olaf-violet-highlight);
+    background-color: var(--olaf-violet-25);
 }
 
 #olaf-nav li.nav-item:nth-child(4) a.nav-link.active {
     color: #000000;
-    background-color: var(--olaf-blue-highlight);
+    background-color: var(--olaf-blue-25);
 }
 
 #olaf-nav li.nav-item:nth-child(5) a.nav-link.active {
     color: #000000;
-    background-color: var(--olaf-turquoise-highlight);
+    background-color: var(--olaf-turquoise-25);
 }
 
 #olaf-nav li.nav-item:nth-child(1) a.nav-link:hover {
     color: #000000;
-    background-color: var(--olaf-orange-hover);
+    background-color: var(--olaf-orange-75);
 }
 
 #olaf-nav li.nav-item:nth-child(2) a.nav-link:hover {
     color: #000000;
-    background-color: var(--olaf-red-hover);
+    background-color: var(--olaf-red-75);
 }
 
 #olaf-nav li.nav-item:nth-child(3) a.nav-link:hover {
     color: #000000;
-    background-color: var(--olaf-violet-hover);
+    background-color: var(--olaf-violet-75);
 }
 
 #olaf-nav li.nav-item:nth-child(4) a.nav-link:hover {
     color: #000000;
-    background-color: var(--olaf-blue-hover);
+    background-color: var(--olaf-blue-75);
 }
 
 #olaf-nav li.nav-item:nth-child(5) a.nav-link:hover {
     color: #000000;
-    background-color: var(--olaf-turquoise-hover);
+    background-color: var(--olaf-turquoise-75);
 }
 
 #olaf-nav a.nav-link svg {
@@ -220,16 +343,13 @@ a.external::after {
 }
 
 
-#footer {
-    border-top: 1px solid #909090;
-}
 #footer .footer-item {
     font-family: var(--olaf-font);
     padding: 0.25rem;
-    color: #606060 !important;
+    color: var(--olaf-light-grey) !important;
 }
 #footer .footer-item a {
-    color: #606060;
+    color: var(--olaf-light-grey);
 }
 
 
@@ -237,27 +357,14 @@ section {
     margin-bottom: 1rem;
 }
 
-section.alerts {
-    border-bottom: 1px solid grey;
+section#announcements .alert {
+    border-color: var(--olaf-red);
+    background-color: var(--olaf-red-25);
 }
 
-section.alerts p {
-    border-left: .5rem solid var(--olaf-red);
-    padding: .3rem .5rem;
-    background-color: var(--olaf-red-highlight);
-    mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
-    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
-    mask-repeat: no-repeat;
-    mask-size: 51% 51%;
-    -webkit-mask-image: linear-gradient(135deg,transparent .4rem,gold 0),linear-gradient(-135deg,transparent .4rem,gold 0),linear-gradient(45deg,transparent .4rem,gold 0),linear-gradient(-45deg,transparent .4rem,gold 0);
-    -webkit-mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 51% 51%;
-}
-
-#opening-hours {
+section#announcements #opening-hours {
     border-color: var(--olaf-violet);
-    background-color: var(--olaf-violet-highlight);
+    background-color: var(--olaf-violet-25);
 }
 
 
