@@ -15,6 +15,11 @@
     global tag specific adjustments
 */
 
+body {
+    background-color: var(--olaf-white);
+    color: var(--olaf-text);
+}
+
 h1,
 h2,
 h3,
@@ -91,7 +96,7 @@ hr {
     --olaf-btn-bg-color: var(--olaf-light-grey-75);
     font-family: var(--olaf-font);
     font-weight: 500;
-    color: var(--bs-body-color) !important;
+    color: var(--olaf-text) !important;
     background-color: var(--olaf-btn-bg-color);
     text-decoration: none;
     border: none;
@@ -264,7 +269,7 @@ hr {
 }
 
 #olaf-nav a.nav-link {
-    color: #000000;
+    color: var(--olaf-text);
     font-weight: 500;
     text-decoration: none;
     letter-spacing: .1rem;
@@ -282,62 +287,62 @@ hr {
 }
 
 #olaf-nav a.nav-link:hover {
-    color: #ffffff;
-    background-color: #000000;
+    color: var(--olaf-white);
+    background-color: var(--olaf-text);
 }
 
 #olaf-nav a.nav-link.active {
-    color: #ffffff;
-    background-color: #000000;
+    color: var(--olaf-white);
+    background-color: var(--olaf-text);
 }
 
 #olaf-nav li.nav-item:nth-child(1) a.nav-link.active {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-orange-25);
 }
 
 #olaf-nav li.nav-item:nth-child(2) a.nav-link.active {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-red-25);
 }
 
 #olaf-nav li.nav-item:nth-child(3) a.nav-link.active {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-violet-25);
 }
 
 #olaf-nav li.nav-item:nth-child(4) a.nav-link.active {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-blue-25);
 }
 
 #olaf-nav li.nav-item:nth-child(5) a.nav-link.active {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-turquoise-25);
 }
 
 #olaf-nav li.nav-item:nth-child(1) a.nav-link:hover {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-orange-75);
 }
 
 #olaf-nav li.nav-item:nth-child(2) a.nav-link:hover {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-red-75);
 }
 
 #olaf-nav li.nav-item:nth-child(3) a.nav-link:hover {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-violet-75);
 }
 
 #olaf-nav li.nav-item:nth-child(4) a.nav-link:hover {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-blue-75);
 }
 
 #olaf-nav li.nav-item:nth-child(5) a.nav-link:hover {
-    color: #000000;
+    color: var(--olaf-text);
     background-color: var(--olaf-turquoise-75);
 }
 
@@ -345,6 +350,21 @@ hr {
     vertical-align: bottom;
 }
 
+#olaf-socials {
+    width: 100%;
+}
+#olaf-socials a {
+    border: none;
+    background: none;
+    color: var(--olaf-light-grey);
+    padding: .5rem;
+}
+#olaf-socials a:hover {
+    color: var(--olaf-light-grey-75);
+}
+#olaf-socials a svg {
+    vertical-align: bottom;
+}
 
 #olaf-links .nav-item {
     font-family: var(--olaf-font);
@@ -377,7 +397,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: #ffffff;
+    color: var(--olaf-always-white);
     min-height: 45vh;
 }
 #welcome #welcome-image-container div {
@@ -399,18 +419,20 @@ section {
     animation-duration: .3s;
     transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
     animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+    transition-property: all;
     border-radius: 16px;
     /* yes it has to be exactly 16px to match the slanted corners as closely as possible (that's needed because the radius also effekt the box-shadow) */
-    box-shadow: 0 0 .8rem .05rem rgba(0,0,0,.175);
+    box-shadow: 0 0 .8rem .2rem var(--olaf-shadow);
 }
 
 #events .card-shadow:hover, #events .card-shadow:active {
-    /* box-shadow: 0 0 2rem .2rem rgba(0,0,0,.175); */
+    box-shadow: 0 0 2rem .2rem var(--olaf-shadow);
     transform: scale(1.02);
 }
 
 #events .card {
     border: none;
+    background-color: var(--olaf-white);
     margin-bottom: 1rem;
 }
 
@@ -419,16 +441,16 @@ section {
 }
 
 #events .card, #events a.card:visited {
-    color: var(--bs-body-color);
+    color: var(--olaf-text);
     text-decoration: none;
 }
 
 #events .card .card-img-overlay {
-    color: #ffffff;
+    color: var(--olaf-always-white);
 }
 
 #events .card .card-img-overlay a {
-    color: #ffffff;
+    color: var(--olaf-always-white);
     text-decoration: underline;
 }
 
@@ -443,7 +465,7 @@ section {
 }
 
 #events .card.card-image-container .card-body {
-    color: #ffffff;
+    color: var(--olaf-always-white);
 }
 
 #events .card .card-body .card-title {
@@ -454,7 +476,7 @@ section {
     font-weight: 600;
     letter-spacing: .1rem;
     text-transform: uppercase;
-    color: var(--olaf-red);
+    color: var(--olaf-violet);
 }
 
 #events #future-events .card .card-body small {
@@ -472,6 +494,21 @@ section {
 #footer {
     text-align: center;
 }
+
+#footer-toggles {
+    width: 100%;
+}
+#footer-toggles button {
+    border: none;
+    background: none;
+    color: var(--olaf-light-grey);
+    padding: .5rem;
+}
+#footer-toggles button svg {
+    vertical-align: bottom;
+}
+
+
 #footer .footer-item {
     font-family: var(--olaf-font);
     padding: 0.25rem;

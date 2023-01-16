@@ -1,5 +1,15 @@
 :root {
     --olaf-font: 'Chakra Petch', sans-serif;
+    --olaf-shadow: rgba(0, 0, 0, .175);
+
+    --olaf-white: #ffffff;
+    --olaf-black: #000000;
+    --olaf-text: #202020;
+
+    --olaf-always-white: #ffffff;
+    --olaf-always-black: #000000;
+    --olaf-always-text: #202020;
+
     --olaf-orange: #ff8c00;
     --olaf-red: #cc3333;
     --olaf-violet: #b740bf;
@@ -7,7 +17,7 @@
     --olaf-turquoise: #4db3a0;
     --olaf-grey: #404040;
     --olaf-light-grey: #808080;
-    
+
     /* c0 is hexadecimal for 75 percent */
     /* 9a is hexadecimal for 60 percent */
     /* 80 is hexadecimal for 50 percent */
@@ -19,7 +29,7 @@
     --olaf-turquoise-25: #4db3a040;
     --olaf-grey-25: #40404040;
     --olaf-light-grey-25: #80808040;
-    
+
     --olaf-orange-50: #ff8c0080;
     --olaf-red-50: #cc333380;
     --olaf-violet-50: #b740bf80;
@@ -27,7 +37,7 @@
     --olaf-turquoise-50: #4db3a080;
     --olaf-grey-50: #40404080;
     --olaf-light-grey-50: #80808080;
-    
+
     --olaf-orange-75: #ff8c00c0;
     --olaf-red-75: #cc3333c0;
     --olaf-violet-75: #b740bfc0;
@@ -35,4 +45,136 @@
     --olaf-turquoise-75: #4db3a0c0;
     --olaf-grey-75: #404040c0;
     --olaf-light-grey-75: #808080c0;
+}
+
+body, .card {
+    transition-duration: .2s;
+    animation-duration: .2s;
+    transition-property: background;
+    transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+    animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+html #svg-moon-fill, html #svg-terminal-fill {
+    display: none;
+}
+
+@media (prefers-color-scheme: light) {
+    html.dark-mode, html.terminal-mode {
+        --olaf-shadow: rgba(192, 192, 192, .175);
+
+        --olaf-white: #000000;
+        --olaf-black: #f0f0f0;
+        --olaf-text: #f0f0f0;
+
+        /* inverted grey color to have the same 'brighter' and 'darker' appearance as in light mode
+        set light grey to #606060 instead #404040 to increase contrast and legibility*/
+        --olaf-grey: #b0b0b0;
+        --olaf-light-grey: #808080;
+
+        --olaf-grey-25: #b0b0b040;
+        --olaf-light-grey-25: #80808040;
+
+        --olaf-grey-50: #b0b0b080;
+        --olaf-light-grey-50: #80808080;
+
+        --olaf-grey-75: #b0b0b0c0;
+        --olaf-light-grey-75: #808080c0;
+
+        /*--olaf-grey-25: #40404070;*/
+    }
+    
+    html.terminal-mode {
+        --olaf-text: #28FE14;
+    }
+    
+    html.dark-mode #svg-moon {
+        display: none;
+    }
+    
+    html.dark-mode #svg-moon-fill {
+        display: inline;
+    }
+    
+    html.terminal-mode #svg-terminal {
+        display: none;
+    }
+    
+    html.terminal-mode #svg-terminal-fill {
+        display: inline;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --olaf-shadow: rgba(192, 192, 192, .175);
+
+        --olaf-white: #000000;
+        --olaf-black: #f0f0f0;
+        --olaf-text: #f0f0f0;
+
+        /* inverted grey color to have the same 'brighter' and 'darker' appearance as in light mode
+        set light grey to #606060 instead #404040 to increase contrast and legibility*/
+        --olaf-grey: #b0b0b0;
+        --olaf-light-grey: #808080;
+
+        --olaf-grey-25: #b0b0b040;
+        --olaf-light-grey-25: #80808040;
+
+        --olaf-grey-50: #b0b0b080;
+        --olaf-light-grey-50: #80808080;
+
+        --olaf-grey-75: #b0b0b0c0;
+        --olaf-light-grey-75: #808080c0;
+
+        /*--olaf-grey-25: #40404070;*/
+    }
+
+    html.dark-mode {
+        --olaf-shadow: rgba(0, 0, 0, .175);
+
+        --olaf-white: #ffffff;
+        --olaf-black: #000000;
+        --olaf-text: #202020;
+
+        --olaf-grey: #404040;
+        --olaf-light-grey: #808080;
+
+        --olaf-grey-25: #40404040;
+        --olaf-light-grey-25: #80808040;
+
+        --olaf-grey-50: #40404080;
+        --olaf-light-grey-50: #80808080;
+
+        --olaf-grey-75: #404040c0;
+        --olaf-light-grey-75: #808080c0;
+    }
+    
+    html.terminal-mode {
+        --olaf-text: #28FE14;
+    }
+    
+    html #svg-moon {
+        display: none;
+    }
+    
+    html #svg-moon-fill {
+        display: inline;
+    }
+    
+    html.dark-mode #svg-moon {
+        display: inline;
+    }
+    
+    html.dark-mode #svg-moon-fill {
+        display: none;
+    }
+    
+    html.terminal-mode #svg-terminal, html.terminal-mode #svg-moon-fill {
+        display: none;
+    }
+    
+    html.terminal-mode #svg-terminal-fill, html.terminal-mode #svg-moon {
+        display: inline;
+    }
 }

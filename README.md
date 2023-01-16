@@ -23,8 +23,8 @@ This is a Work in Progress draft of an updated olaf.one website.
 - [x] Add favicons etc.
 - [ ] Add Open Graph meta tags
 - [x] Add robots meta tag for development
-- [ ] Set CSS variables for dark mode (+ 'Terminal Mode')
-    - [ ] Add toggle buttons above the extra links
+- [x] Set CSS variables for dark mode (+ 'Terminal Mode')
+    - [x] Add toggle buttons at bottom of page
 
 
 #### Mobile
@@ -38,4 +38,4 @@ This is a Work in Progress draft of an updated olaf.one website.
 
 ---
 ### Documentation
-- The .card elements can't contain any links because the are links themselves. (The .card-text paragraph will be populated with the sites description field which does not allow for links anyway.)
+- The .card elements can't contain any links because they are links themselves. (The .card-text paragraph will be populated with the sites description field which does not allow for links anyway.)
