@@ -1,6 +1,8 @@
 :root {
     --olaf-font: 'Chakra Petch', sans-serif;
-    --olaf-shadow: rgba(0, 0, 0, .175);
+    --olaf-shadow-color: rgba(0, 0, 0, .175);
+    --olaf-shadow: 0 0 .8rem .2rem var(--olaf-shadow-color);
+    --olaf-shadow-hover: 0 0 2rem .2rem var(--olaf-shadow-color);
 
     --olaf-white: #ffffff;
     --olaf-black: #000000;
@@ -18,31 +20,33 @@
     --olaf-grey: #404040;
     --olaf-light-grey: #808080;
 
+    /* e0 is hexadecimal for 87.5 percent */
     /* c0 is hexadecimal for 75 percent */
-    /* 9a is hexadecimal for 60 percent */
+    /* a0 is hexadecimal for 62.5 percent */
     /* 80 is hexadecimal for 50 percent */
+    /* 60 is hexadecimal for 37.5 percent */
     /* 40 is hexadecimal for 25 percent */
-    --olaf-orange-25: #ff8c0040;
-    --olaf-red-25: #cc333340;
-    --olaf-violet-25: #b740bf40;
-    --olaf-blue-25: #404fbf40;
-    --olaf-turquoise-25: #4db3a040;
+    --olaf-orange-25: #ff8c0060;
+    --olaf-red-25: #cc333360;
+    --olaf-violet-25: #b740bf60;
+    --olaf-blue-25: #404fbf60;
+    --olaf-turquoise-25: #4db3a060;
     --olaf-grey-25: #40404040;
     --olaf-light-grey-25: #80808040;
 
-    --olaf-orange-50: #ff8c0080;
-    --olaf-red-50: #cc333380;
-    --olaf-violet-50: #b740bf80;
-    --olaf-blue-50: #404fbf80;
-    --olaf-turquoise-50: #4db3a080;
+    --olaf-orange-50: #ff8c00a0;
+    --olaf-red-50: #cc3333a0;
+    --olaf-violet-50: #b740bfa0;
+    --olaf-blue-50: #404fbfa0;
+    --olaf-turquoise-50: #4db3a0a0;
     --olaf-grey-50: #40404080;
     --olaf-light-grey-50: #80808080;
 
-    --olaf-orange-75: #ff8c00c0;
-    --olaf-red-75: #cc3333c0;
-    --olaf-violet-75: #b740bfc0;
-    --olaf-blue-75: #404fbfc0;
-    --olaf-turquoise-75: #4db3a0c0;
+    --olaf-orange-75: #ff8c00e0;
+    --olaf-red-75: #cc3333e0;
+    --olaf-violet-75: #b740bfe0;
+    --olaf-blue-75: #404fbfe0;
+    --olaf-turquoise-75: #4db3a0e0;
     --olaf-grey-75: #404040c0;
     --olaf-light-grey-75: #808080c0;
 }
@@ -61,27 +65,25 @@ html #svg-moon-fill, html #svg-terminal-fill {
 
 @media (prefers-color-scheme: light) {
     html.dark-mode, html.terminal-mode {
-        --olaf-shadow: rgba(192, 192, 192, .175);
+        --olaf-shadow-color: rgba(192, 192, 192, .175);
 
         --olaf-white: #000000;
         --olaf-black: #f0f0f0;
         --olaf-text: #f0f0f0;
-
-        /* inverted grey color to have the same 'brighter' and 'darker' appearance as in light mode
-        set light grey to #606060 instead #404040 to increase contrast and legibility*/
-        --olaf-grey: #b0b0b0;
+        
+        /* inverted grey colors to have the same 'brighter' and 'darker' appearance/relation as in light mode */
+        /* additionally adjusted olaf-grey values to increase contrast and legibility */
+        --olaf-grey: #a0a0a0;
         --olaf-light-grey: #808080;
-
-        --olaf-grey-25: #b0b0b040;
+        
+        --olaf-grey-25: #a0a0a040;
         --olaf-light-grey-25: #80808040;
 
-        --olaf-grey-50: #b0b0b080;
+        --olaf-grey-50: #a0a0a080;
         --olaf-light-grey-50: #80808080;
 
-        --olaf-grey-75: #b0b0b0c0;
+        --olaf-grey-75: #a0a0a0c0;
         --olaf-light-grey-75: #808080c0;
-
-        /*--olaf-grey-25: #40404070;*/
     }
     
     html.terminal-mode {
@@ -107,31 +109,29 @@ html #svg-moon-fill, html #svg-terminal-fill {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --olaf-shadow: rgba(192, 192, 192, .175);
+        --olaf-shadow-color: rgba(192, 192, 192, .175);
 
         --olaf-white: #000000;
         --olaf-black: #f0f0f0;
         --olaf-text: #f0f0f0;
-
-        /* inverted grey color to have the same 'brighter' and 'darker' appearance as in light mode
-        set light grey to #606060 instead #404040 to increase contrast and legibility*/
-        --olaf-grey: #b0b0b0;
+        
+        /* inverted grey colors to have the same 'brighter' and 'darker' appearance/relation as in light mode */
+        /* additionally adjusted olaf-grey values to increase contrast and legibility */
+        --olaf-grey: #a0a0a0;
         --olaf-light-grey: #808080;
-
-        --olaf-grey-25: #b0b0b040;
+        
+        --olaf-grey-25: #a0a0a040;
         --olaf-light-grey-25: #80808040;
 
-        --olaf-grey-50: #b0b0b080;
+        --olaf-grey-50: #a0a0a080;
         --olaf-light-grey-50: #80808080;
 
-        --olaf-grey-75: #b0b0b0c0;
+        --olaf-grey-75: #a0a0a0c0;
         --olaf-light-grey-75: #808080c0;
-
-        /*--olaf-grey-25: #40404070;*/
     }
 
     html.dark-mode {
-        --olaf-shadow: rgba(0, 0, 0, .175);
+        --olaf-shadow-color: rgba(0, 0, 0, .175);
 
         --olaf-white: #ffffff;
         --olaf-black: #000000;

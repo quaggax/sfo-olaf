@@ -15,6 +15,7 @@ This is a Work in Progress draft of an updated olaf.one website.
     - [ ] Add featured projects above events
 - [x] Pay attention to notch-area on iPhone (horizontal)
     (not necessary because body is solid color and no images expand to viewport edges)
+- [ ] Swap all SVG elements for SPAN elements with bootstrap-icons font
 - [ ] Start working on About, Projekte, Förderverein & Event pages
     - [ ] Add Breadcrumb in the top middle above the horizontal line (except home page and Events; effectively instead of the alerts) (grey bg with slanted corners; orange text)
 - [ ] Check how to format websites for PDF when opening the print dialogue (it is possible to show, hide and reformat elements)
