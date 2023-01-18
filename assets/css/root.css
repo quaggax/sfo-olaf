@@ -7,6 +7,10 @@
     --olaf-white: #ffffff;
     --olaf-black: #000000;
     --olaf-text: #202020;
+    
+    /* regular blue and violet colors mixed at 87.5 percent opacity (hex: #xxxxxxe0) with black to increase contrast and legibility */
+    --olaf-link: #3845a7;
+    --olaf-link-visited: #a038a7;
 
     --olaf-always-white: #ffffff;
     --olaf-always-black: #000000;
@@ -54,7 +58,7 @@
 body, .card {
     transition-duration: .2s;
     animation-duration: .2s;
-    transition-property: background;
+    transition-property: color, background;
     transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
     animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
 }
@@ -71,8 +75,9 @@ html #svg-moon-fill, html #svg-terminal-fill {
         --olaf-black: #f0f0f0;
         --olaf-text: #f0f0f0;
         
-        /* inverted grey colors to have the same 'brighter' and 'darker' appearance/relation as in light mode */
-        /* additionally adjusted olaf-grey values to increase contrast and legibility */
+        --olaf-link: #8891d7;
+        --olaf-link-visited: #d288d7;
+        
         --olaf-grey: #a0a0a0;
         --olaf-light-grey: #808080;
         
@@ -115,6 +120,10 @@ html #svg-moon-fill, html #svg-terminal-fill {
         --olaf-black: #f0f0f0;
         --olaf-text: #f0f0f0;
         
+        /* regular blue and violet colors mixed at 62.5 percent opacity (hex: #xxxxxxa0) with white to increase contrast and legibility */
+        --olaf-link: #8891d7;
+        --olaf-link-visited: #d288d7;
+        
         /* inverted grey colors to have the same 'brighter' and 'darker' appearance/relation as in light mode */
         /* additionally adjusted olaf-grey values to increase contrast and legibility */
         --olaf-grey: #a0a0a0;
@@ -136,6 +145,9 @@ html #svg-moon-fill, html #svg-terminal-fill {
         --olaf-white: #ffffff;
         --olaf-black: #000000;
         --olaf-text: #202020;
+
+        --olaf-link: #3845a7;
+        --olaf-link-visited: #a038a7;
 
         --olaf-grey: #404040;
         --olaf-light-grey: #808080;
