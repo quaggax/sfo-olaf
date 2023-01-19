@@ -37,3 +37,13 @@ function ToggleTerminalMode() {
         }
     }
 }
+
+/* This function sets the target of HTML anchors to "_blank" if they point to a different hostname (domain basically) */
+function ExternalLinks() {
+    var anchorElements = document.getElementsByTagName("a");
+    for (var i = 0; i < anchorElements.length; i++) {
+        var anchorElement = anchorElements[i];
+        anchorElement.getAttribute("href") && anchorElement.hostname !== location.hostname && (anchorElement.target = "_blank");
+    }
+}
+ExternalLinks();
