@@ -79,7 +79,7 @@
                     </ul>
                     <hr class="m-0">
                     <div id="olaf-socials" class="d-flex flex-row flex-wrap justify-content-center justify-content-lg-start">
-                        <a href="" target="_blank" id="youtube-link">
+                        <a href="https://www.youtube.com/@oLaF-SFO" target="_blank" id="youtube-link">
                             <span class="bootstrap-icons">&#xF62B;</span>
                         </a>
                         <a href="https://www.instagram.com/olaf.sfo/" target="_blank" id="instagram-link">
@@ -135,33 +135,44 @@
                     </div>
                 </section>
                 <section id="space-gallery">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                    <div id="space-gallery-container" class="row">
+                        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Das ist ein Beispiel-Titel.">
                             <img src="assets/images/banner.png" alt="" class="slanted-corners">
                             <small>Das ist ein Beispiel-Titel.</small>
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        </a>
+                        <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
                             <img src="assets/images/download.png" alt="" class="slanted-corners">
                             <small>Der Böhrer</small>
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        </a>
+                        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
                             <img src="assets/images/banner.png" alt="" class="slanted-corners">
                             <small>Unsere Spülsabine</small>
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        </a>
+                        <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
                             <img src="assets/images/about_banner.png" alt="" class="slanted-corners">
                             <small>Unsere 3D-Drucker Kollektion</small>
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        </a>
+                        <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
                             <img src="assets/images/about_banner.png" alt="" class="slanted-corners">
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        </a>
+                        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
                             <img src="assets/images/banner.png" alt="" class="slanted-corners">
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        </a>
+                        <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
                             <img src="assets/images/download.png" alt="" class="slanted-corners">
-                        </div>
+                        </a>
                     </div>
+                    <link rel="stylesheet" href="assets/libraries/simpleLightbox/simpleLightbox.min.css">
+                    <script src="assets/libraries/simpleLightbox/simpleLightbox.min.js"></script>
+                    <script>
+                        var SimpleLightbox = window.SimpleLightbox;
+
+                        SimpleLightbox.defaults.captionAttribute = "data-caption"; // choose data source for library to glean image caption from
+
+                        new SimpleLightbox({
+                            elements: '#space-gallery-container a'
+                        });
+                    </script>
                 </section>
                 <footer id="footer">
                     <div id="footer-toggles" class="w-100">

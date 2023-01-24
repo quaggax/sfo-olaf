@@ -419,12 +419,20 @@ section:not(section:first-of-type, #announcements, #welcome) {
 #welcome #welcome-text {
     margin-bottom: 1rem;
 }
+
+
+.cta-group {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* copied from bootstrap class (.btn-lg) to make button larger */
-#welcome #welcome-action>.btn {
+.cta-group.cta-group-lg>.btn {
     --bs-btn-padding-y: 0.5rem;
     --bs-btn-padding-x: 1rem;
     --bs-btn-font-size: 1.25rem;
 }
+
 
 .card-shadow {
     transition-duration: .3s;
@@ -467,11 +475,18 @@ a.card, a.card:visited {
     margin-bottom: 0;
 }
 
-.card .card-body small {
+.card .card-body .card-subtitle {
     font-weight: 600;
     letter-spacing: .1rem;
     text-transform: uppercase;
     color: var(--olaf-violet);
+}
+
+.card .card-body .card-categories {
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--olaf-grey);
 }
 
 .card .card-body .card-text {
