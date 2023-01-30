@@ -497,6 +497,19 @@ a.card, a.card:visited {
 }
 
 
+.gallery img {
+    width: 100%;
+}
+
+.gallery a {
+    color: var(--olaf-text);
+}
+
+.gallery a:hover {
+    text-decoration: none;
+}
+
+
 #footer {
     text-align: center;
 }
@@ -515,6 +528,27 @@ a.card, a.card:visited {
 }
 #footer-toggles button span.bootstrap-icons {
     font-size: 18px;
+}
+#footer-toggles #toggle-auto-mode {
+    vertical-align: middle;
+}
+#footer-toggles #toggle-auto-mode span {
+    font-family: var(--olaf-font);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .8rem;
+    color: var(--olaf-text);
+    vertical-align: top;
+    padding: .125rem .25rem;
+    background-color: var(--olaf-light-grey-25);
+    mask-image: linear-gradient(135deg,transparent .2rem,gold 0),linear-gradient(-135deg,transparent .2rem,gold 0),linear-gradient(45deg,transparent .2rem,gold 0),linear-gradient(-45deg,transparent .2rem,gold 0);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
+    -webkit-mask-image: linear-gradient(135deg,transparent .2rem,gold 0),linear-gradient(-135deg,transparent .2rem,gold 0),linear-gradient(45deg,transparent .2rem,gold 0),linear-gradient(-45deg,transparent .2rem,gold 0);
+    -webkit-mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 51% 51%;
 }
 
 
@@ -543,10 +577,6 @@ a.card, a.card:visited {
 #about-history p time {
     min-width: 5ch;
     /* the unit "ch" is the width of one "0". these are years (4 digits) so there is an extra space before the text starts */
-}
-
-#space-gallery img {
-    width: 100%;
 }
 
 

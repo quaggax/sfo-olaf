@@ -1,40 +1,92 @@
 var htmlTag = document.getElementsByTagName('html')[0];
+var cookiePrompt = document.getElementById('cookie-prompt');
+
+function CookiesAcknowledged() {
+    if (cookiePairs["cookies-acknowledged"] == 1) {
+        return true;
+    } else if (cookiePairs["cookies-acknowledged"] == 0) {
+        return false;
+    }
+}
+
+function ShowCookiePrompt() {
+    cookiePrompt.style = "display: block;";
+}
+
+function HideCookiePrompt() {
+    cookiePrompt.style = "display: none;";
+}
+
+function ProceedToSetTheme() {
+    AcknowledgeCookies();
+    CreateCookieObject();
+    HideCookiePrompt();
+    if (cookiePrompt.dataset.button == "dark") {
+        ToggleDarkMode();
+    } else if (cookiePrompt.dataset.button == "terminal") {
+        ToggleTerminalMode();
+    } else if (cookiePrompt.dataset.button == "auto") {
+        ToggleAutoMode();
+    }
+}
+
+function ToggleAutoMode() {
+    if (CookiesAcknowledged() == true) {
+        htmlTag.classList = "auto-mode";
+        SetCookie("theme", "auto-mode", dateCookieExpires);
+    } else {
+        cookiePrompt.dataset.button = "auto";
+        ShowCookiePrompt();
+    }
+}
 
 function ToggleDarkMode() {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        if (htmlTag.classList.contains('terminal-mode')) {
-            htmlTag.classList.remove('terminal-mode');
+    if (CookiesAcknowledged() == true) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (htmlTag.classList.contains('terminal-mode') || htmlTag.classList.contains('light-mode')) {
+                htmlTag.classList = "dark-mode";
+                SetCookie("theme", "dark-mode", dateCookieExpires);
+            } else if (htmlTag.classList.contains('dark-mode') || htmlTag.classList.contains('auto-mode')) {
+                htmlTag.classList = "light-mode";
+                SetCookie("theme", "light-mode", dateCookieExpires);
+            }
         } else {
-            htmlTag.classList.toggle('dark-mode');
+            if (htmlTag.classList.contains('terminal-mode') || htmlTag.classList.contains('light-mode') || htmlTag.classList.contains('auto-mode')) {
+                htmlTag.classList = "dark-mode";
+                SetCookie("theme", "dark-mode", dateCookieExpires);
+            } else if (htmlTag.classList.contains('dark-mode')) {
+                htmlTag.classList = "light-mode";
+                SetCookie("theme", "light-mode", dateCookieExpires);
+            }
         }
     } else {
-        if (htmlTag.classList.contains('terminal-mode')) {
-            htmlTag.classList.remove('terminal-mode');
-            htmlTag.classList.add('dark-mode');
-        } else {
-            htmlTag.classList.toggle('dark-mode');
-        }
+        cookiePrompt.dataset.button = "dark";
+        ShowCookiePrompt();
     }
 }
 
 function ToggleTerminalMode() {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        if (htmlTag.classList.contains('dark-mode')) {
-            htmlTag.classList.remove('dark-mode');
-            htmlTag.classList.add('terminal-mode');
-        } else if (htmlTag.classList.contains('terminal-mode')) {
-            htmlTag.classList.remove('terminal-mode');
-            htmlTag.classList.add('dark-mode');
+    if (CookiesAcknowledged() == true) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (htmlTag.classList.contains('dark-mode') || htmlTag.classList.contains('light-mode') || htmlTag.classList.contains('auto-mode')) {
+                htmlTag.classList = "terminal-mode";
+                SetCookie("theme", "terminal-mode", dateCookieExpires);
+            } else if (htmlTag.classList.contains('terminal-mode')) {
+                htmlTag.classList = "dark-mode";
+                SetCookie("theme", "dark-mode", dateCookieExpires);
+            }
         } else {
-            htmlTag.classList.add('terminal-mode');
+            if (htmlTag.classList.contains('dark-mode') || htmlTag.classList.contains('light-mode') || htmlTag.classList.contains('auto-mode')) {
+                htmlTag.classList = "terminal-mode";
+                SetCookie("theme", "terminal-mode", dateCookieExpires);
+            } else if (htmlTag.classList.contains('terminal-mode')) {
+                htmlTag.classList = "light-mode";
+                SetCookie("theme", "light-mode", dateCookieExpires);
+            }
         }
     } else {
-        if (htmlTag.classList.contains('dark-mode')) {
-            htmlTag.classList.remove('dark-mode');
-            htmlTag.classList.add('terminal-mode');
-        } else {
-            htmlTag.classList.toggle('terminal-mode');
-        }
+        cookiePrompt.dataset.button = "terminal";
+        ShowCookiePrompt();
     }
 }
 

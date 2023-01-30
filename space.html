@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="auto-mode">
 
 <head>
     <meta charset="utf-8">
@@ -31,6 +31,8 @@
     <meta name="application-name" content="oLaF SFO">
     <meta name="msapplication-TileColor" content="#ffa940">
     <meta name="msapplication-config" content="assets/favicon/browserconfig.xml?v=0.0.2">
+    
+    <script src="assets/js/cookies.js"></script>
 </head>
 
 <body>
@@ -105,6 +107,19 @@
         <div class="col-lg-3"></div>
         <main class="col-xl-6 col-lg-8">
             <div class="mx-3 mb-3 mt-0 mt-lg-3">
+                <div id="transparency-alert" class="alert alert-red">
+                    Hey, du hast JavaScript deaktiviert!
+                    <br>
+                    Dadurch ist lediglich die Funktion der Gallerie eingeschränkt.
+                    <br>
+                    Bei uns wirst du nicht getrackt. Ohne JavaScript geht es natürlich, aber das macht nicht so viel Spaß ;)
+                    <br>
+                    Für mehr Infos über Scripte und Software auf unserer Website kannst du dir <a href="tranzparenz.html">unsere Transparenz&#8209;Erklärung</a> ansehen.
+                </div>
+                <script>
+                    /* Don't panic! This script removes a div element with a prompt to users blocking JavaScript. It's basically just a heads up that they may experience limited functionality. */
+                    document.getElementById('transparency-alert').remove();
+                </script>
                 <h1>Der Macherraum</h1>
                 <section id="space-carousel">
                     <div id="carouselExampleIndicators" class="carousel slide slanted-corners" data-bs-ride="carousel">
@@ -134,21 +149,21 @@
                         </button>
                     </div>
                 </section>
-                <section id="space-gallery">
+                <section id="space-gallery" class="gallery">
                     <div id="space-gallery-container" class="row">
                         <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Das ist ein Beispiel-Titel.">
                             <img src="assets/images/banner.png" alt="" class="slanted-corners">
                             <small>Das ist ein Beispiel-Titel.</small>
                         </a>
-                        <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
+                        <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Der Böhrer">
                             <img src="assets/images/download.png" alt="" class="slanted-corners">
                             <small>Der Böhrer</small>
                         </a>
-                        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
+                        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Unsere Spülsabine">
                             <img src="assets/images/banner.png" alt="" class="slanted-corners">
                             <small>Unsere Spülsabine</small>
                         </a>
-                        <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
+                        <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Unsere 3D-Drucker Kollektion">
                             <img src="assets/images/about_banner.png" alt="" class="slanted-corners">
                             <small>Unsere 3D-Drucker Kollektion</small>
                         </a>
@@ -163,9 +178,16 @@
                         </a>
                     </div>
                     <link rel="stylesheet" href="assets/libraries/simpleLightbox/simpleLightbox.min.css">
+                    <link rel="stylesheet" href="assets/css/simpleLightbox-adjusts.css">
                     <script src="assets/libraries/simpleLightbox/simpleLightbox.min.js"></script>
                     <script>
                         var SimpleLightbox = window.SimpleLightbox;
+
+                        // customize / localize controls captions
+                        SimpleLightbox.defaults.closeBtnCaption = 'Schließen';
+                        SimpleLightbox.defaults.nextBtnCaption = 'Weiter';
+                        SimpleLightbox.defaults.prevBtnCaption = 'Zurück';
+                        SimpleLightbox.defaults.loadingCaption = 'Der Server rennt...';
 
                         SimpleLightbox.defaults.captionAttribute = "data-caption"; // choose data source for library to glean image caption from
 
@@ -175,7 +197,19 @@
                     </script>
                 </section>
                 <footer id="footer">
+                    <div id="cookie-prompt" style="display: none;">
+                        <div class="alert text-start w-50 mx-auto">
+                            Um deine Präferenz zu speichern nutzen wir (nicht-trackende!) Cookies mit einer Gültigkeit von 7 Tagen.
+                            <br>
+                            Bist du damit einverstanden?
+                            <br>
+                            <a onclick="ProceedToSetTheme()" class="btn">Ja</a> <a onclick="HideCookiePrompt()" class="btn">Nein</a>
+                        </div>
+                    </div>
                     <div id="footer-toggles" class="w-100">
+                        <button id="toggle-auto-mode" onclick="ToggleAutoMode()">
+                            <span>Auto</span>
+                        </button>
                         <button id="toggle-dark-mode" onclick="ToggleDarkMode()">
                             <span id="svg-moon" class="bootstrap-icons">&#xF497;</span>
                             <span id="svg-moon-fill" class="bootstrap-icons">&#xF494;</span>

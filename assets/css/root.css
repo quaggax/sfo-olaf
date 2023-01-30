@@ -63,6 +63,10 @@ body, .card {
     animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
 }
 
+html.auto-mode #toggle-auto-mode span {
+    background-color: var(--olaf-light-grey-75) !important;
+}
+
 html #svg-moon-fill, html #svg-terminal-fill {
     display: none;
 }
@@ -139,7 +143,7 @@ html #svg-moon-fill, html #svg-terminal-fill {
         --olaf-light-grey-75: #808080c0;
     }
 
-    html.dark-mode {
+    html.light-mode {
         --olaf-shadow-color: rgba(0, 0, 0, .175);
 
         --olaf-white: #ffffff;
@@ -174,11 +178,11 @@ html #svg-moon-fill, html #svg-terminal-fill {
         display: inline;
     }
     
-    html.dark-mode #svg-moon {
+    html.light-mode #svg-moon {
         display: inline;
     }
     
-    html.dark-mode #svg-moon-fill {
+    html.light-mode #svg-moon-fill {
         display: none;
     }
     

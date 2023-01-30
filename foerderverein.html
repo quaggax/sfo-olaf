@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="auto-mode">
 
 <head>
     <meta charset="utf-8">
@@ -31,6 +31,8 @@
     <meta name="application-name" content="oLaF SFO">
     <meta name="msapplication-TileColor" content="#ffa940">
     <meta name="msapplication-config" content="assets/favicon/browserconfig.xml?v=0.0.2">
+    
+    <script src="assets/js/cookies.js"></script>
 </head>
 
 <body>
@@ -113,7 +115,19 @@
                     </p>
                 </section>
                 <footer id="footer">
+                    <div id="cookie-prompt" style="display: none;">
+                        <div class="alert text-start w-50 mx-auto">
+                            Um deine Präferenz zu speichern nutzen wir (nicht-trackende!) Cookies mit einer Gültigkeit von 7 Tagen.
+                            <br>
+                            Bist du damit einverstanden?
+                            <br>
+                            <a onclick="ProceedToSetTheme()" class="btn">Ja</a> <a onclick="HideCookiePrompt()" class="btn">Nein</a>
+                        </div>
+                    </div>
                     <div id="footer-toggles" class="w-100">
+                        <button id="toggle-auto-mode" onclick="ToggleAutoMode()">
+                            <span>Auto</span>
+                        </button>
                         <button id="toggle-dark-mode" onclick="ToggleDarkMode()">
                             <span id="svg-moon" class="bootstrap-icons">&#xF497;</span>
                             <span id="svg-moon-fill" class="bootstrap-icons">&#xF494;</span>

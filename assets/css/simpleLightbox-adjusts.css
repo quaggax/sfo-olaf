@@ -1,0 +1,41 @@
+.slbCloseBtn {
+    text-indent: -999vw;
+}
+
+.slbCloseBtn::before {
+    text-indent: 0;
+    content: "\F627";
+    font-size: 2rem;
+    color: var(--olaf-always-white);
+    opacity: .7;
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slbArrow::before {
+    content: "";
+    font-family: bootstrap-icons;
+    border: none;
+    font-size: 2rem;
+    color: #ffffff;
+    text-indent: 0;
+}
+
+.slbArrow.prev::before {
+    content: "\F22D";
+    margin-left: -0.5rem;
+}
+
+.slbArrow.next::before {
+    content: "\F231";
+}
+
+.slbCaption, .slbLoadingText {
+    font-family: var(--olaf-font);
+    color: var(--olaf-always-white);
+    opacity: .9;
+    font-weight: 500;
+    letter-spacing: .05rem;
+}
