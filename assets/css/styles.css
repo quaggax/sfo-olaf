@@ -235,6 +235,11 @@ hr {
     --olaf-alert-bg-color: var(--olaf-turquoise-25) !important;
 }
 
+#breadcrumb, #breadcrumb a {
+    font-family: var(--olaf-font);
+    color: var(--olaf-light-grey);
+}
+
 
 #nav-site #navbar-logo {
     color: inherit;
@@ -471,6 +476,10 @@ a.card, a.card:visited {
     color: var(--olaf-always-white);
 }
 
+.card.card-image-container .card-body .card-categories {
+    color: var(--olaf-always-white);
+}
+
 .card .card-body .card-title {
     margin-bottom: 0;
 }
@@ -512,6 +521,13 @@ a.card, a.card:visited {
 
 #footer {
     text-align: center;
+}
+
+#footer #cookie-prompt {
+    text-align: left;
+}
+#footer #cookie-prompt .alert {
+    margin: 0 auto;
 }
 
 #footer-toggles {
@@ -579,6 +595,22 @@ a.card, a.card:visited {
     /* the unit "ch" is the width of one "0". these are years (4 digits) so there is an extra space before the text starts */
 }
 
+#event-data time {
+    font-family: var(--olaf-font);
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--olaf-violet); 
+}
+
+#project-data span {
+    font-family: var(--olaf-font);
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--olaf-grey);
+}
+
 
 /*
     responsive properties
@@ -635,5 +667,34 @@ a.card, a.card:visited {
     
     #olaf-links {
         width: 100%;
+    }
+    
+    #cookie-prompt .alert {
+        width: 50%;
+    }
+}
+
+
+@media print {
+    .print-d-none {
+        display: none !important;
+    }
+    .print-w-100 {
+        width: 100% !important;
+    }
+    .print-d-block {
+        display: block !important;
+    }
+    #olaf-synopsis {
+        display: block !important;
+        background-color: #ffffff;
+        padding: .5rem;
+    }
+    #olaf-synopsis img {
+        height: 3rem;
+        margin: .5rem;
+    }
+    body {
+        height: 88vh;
     }
 }

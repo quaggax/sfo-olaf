@@ -16,10 +16,10 @@ This is a Work in Progress draft of an updated olaf.one website.
 - [x] Pay attention to notch-area on iPhone (horizontal)
     (not necessary because body is solid color and no images expand to viewport edges)
 - [x] Swap all SVG elements for SPAN elements with bootstrap-icons font
-- [ ] Start working on About, Space, Projekte, Förderverein & Event pages
-    - [ ] Add Breadcrumb in the top middle above the horizontal line (except top level pages; effectively instead of the alerts) (grey bg with slanted corners; orange text)
-- [ ] Check how to format websites for PDF when opening the print dialogue (it is possible to show, hide and reformat elements)
-    - [ ] Allows for export of Event pages -> easily print them as flyers (!! Corporate Design)
+- [x] Start working on About, Space, Projekte, Förderverein & Event pages
+    - [x] Add Breadcrumb in the top middle above the horizontal line (except top level pages; effectively instead of the alerts) (grey bg with slanted corners; orange text)
+- [x] Check how to format websites for PDF when opening the print dialogue (it is possible to show, hide and reformat elements)
+    - [x] Allows for export of Event pages -> easily print them as flyers (!! Corporate Design)
 - [x] Add meta tag theme-color
 - [x] Add favicons etc.
 - [ ] Add SEO meta tags
