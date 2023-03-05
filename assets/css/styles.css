@@ -240,6 +240,24 @@ hr {
     color: var(--olaf-light-grey);
 }
 
+#breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+#breadcrumb ol li+li {
+    --olaf-breadcrumb-divider-spacing: .5rem;
+    padding-left: var(--olaf-breadcrumb-divider-spacing);
+}
+
+#breadcrumb ol li+li::before {
+    content: "/";
+    padding-right: var(--olaf-breadcrumb-divider-spacing);
+}
+
 
 #nav-site #navbar-logo {
     color: inherit;
