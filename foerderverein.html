@@ -4,9 +4,27 @@
 <head>
     <meta charset="utf-8">
     <base href="/sfo-olaf/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex,nofollow,noarchive">
+    <link rel="canonical" href="https://example.com/">
+
+    <!-- meta tags -->
     <title>Förderverein // oLaF SFO</title>
+    <meta name="desciption" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive,max-snippet:-1">
+    <meta name="google-site-verification" content="">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="video.movie">
+    <meta property="og:url" content="absolute url">
+    <meta property="og:image" content="absolute url">
+    <meta property="og:image:alt" content="image description">
+    <meta property="og:description" content="">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="oLaF SFO">
+    <meta property="og:type" content="website">
+    <!-- Twitter meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="assets/bootstrap-5.2.3-dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="assets/css/fonts.css">
@@ -37,18 +55,18 @@
 
 <body>
     <div class="row g-0">
-        <nav id="nav-site" class="navbar navbar-expand-lg col-lg-3 align-items-start justify-content-center p-0">
+        <nav id="nav-site" class="navbar navbar-expand-lg col-lg-3 align-items-start justify-content-center p-0 print-d-none">
             <!-- The following div (#nav-site-container) is here so that the following items naturally have the same width as the image. This is also handy because the #nav-site element gets its width defined through its col class (this is a defined width). This allows free positioning of the #nav-site-container inside that pre-defined box (#nav-site). -->
             <div id="nav-site-container" class="d-flex flex-lg-column text-lg-start text-center">
-                <a href="" id="navbar-logo" class="text-center mb-0 mb-lg-2">
+                <a href="" id="navbar-logo" class="text-center my-0 my-lg-2">
                     <img src="assets/images/oLaF_v1.png" alt="oLaF Logo">
                     <p class="h1 mb-0">oLaF <em>SFO</em></p>
                 </a>
-                <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button id="navbar-toggler" class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
                     <div class="bootstrap-icons fs-1">&#xF479;</div>
                 </button>
                 <!-- navbar toggler for mobile -->
-                <div id="navbarNav" class="collapse navbar-collapse flex-column">
+                <div id="navbarNav" class="collapse show navbar-collapse flex-column">
                     <ul id="olaf-nav" class="navbar-nav flex-lg-column text-start w-100 mx-auto mb-auto">
                         <li class="nav-item first">
                             <a href="index.html" class="nav-link">
@@ -102,6 +120,11 @@
                     <hr class="m-0 d-lg-none">
                 </div>
                 <!-- end navbarNav -->
+                <script>
+                    // this script enables the use of the navbar on mobile devices with JavaScript disabled
+                    document.getElementById('navbar-toggler').ariaExpanded = false;
+                    document.getElementById('navbarNav').classList.remove('show');
+                </script>
             </div>
         </nav>
         <div class="col-lg-3"></div>
