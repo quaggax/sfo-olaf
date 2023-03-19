@@ -263,11 +263,21 @@ hr {
     color: inherit;
     text-decoration: none;
 }
+
 #nav-site #navbar-logo img {
     height: 4rem;
 }
 
-#nav-site button.btn, #nav-site button.btn:active {
+#nav-site #navbar-logo p {
+    font-weight: 700;
+}
+
+#nav-site #navbar-logo p em {
+    font-weight: 400;
+}
+
+#nav-site button.btn,
+#nav-site button.btn:active {
     color: var(--olaf-grey);
     background-color: var(--olaf-light-grey-25);
     border: none;
@@ -674,13 +684,15 @@ a.card, a.card:visited {
     }
     
     #nav-site #navbar-logo img {
-        height: 20vh !important;
+        height: auto;
+        max-height: 20vh !important;
         max-width: 100%;
     }
 
     #nav-site #nav-site-container {
         height: 100vh;
         overflow: scroll;
+        margin: 0 1.5rem;
     }
     
     #olaf-links {
