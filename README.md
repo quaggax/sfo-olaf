@@ -22,8 +22,8 @@ This is a Work in Progress draft of an updated olaf.one website.
     - [x] Allows for export of Event pages -> easily print them as flyers (!! Corporate Design)
 - [x] Add meta tag theme-color
 - [x] Add favicons etc.
-- [ ] Add SEO meta tags
-- [ ] Add Open Graph meta tags
+- [x] Add SEO meta tags
+- [x] Add Open Graph meta tags
 - [x] Add robots meta tag for development
 - [x] Set CSS variables for dark mode (+ 'Terminal Mode')
     - [x] Add toggle buttons at bottom of page
