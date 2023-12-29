@@ -1,0 +1,403 @@
+// VARIABLES
+/// COLORS
+$olaf-white: #ffffff;
+$olaf-black: #000000;
+$olaf-text: #202020;
+
+$olaf-orange: #ff8c00;
+$olaf-red: #cc3333;
+$olaf-violet: #b740bf;
+$olaf-blue: #404fbf;
+$olaf-turquoise: #4db3a0;
+$olaf-grey: #404040;
+$olaf-light-grey: #808080;
+
+$colors: (
+    "olaf-orange": $olaf-orange,
+    "olaf-red": $olaf-red,
+    "olaf-violet": $olaf-violet,
+    "olaf-blue": $olaf-blue,
+    "olaf-turquoise": $olaf-turquoise,
+    "olaf-grey": $olaf-grey,
+    "olaf-light-grey": $olaf-light-grey
+);
+
+// e0 is hexadecimal for 87.5 percent
+// c0 is hexadecimal for 75 percent
+// a0 is hexadecimal for 62.5 percent
+// 80 is hexadecimal for 50 percent
+// 60 is hexadecimal for 37.5 percent
+// 40 is hexadecimal for 25 percent
+
+$opacity-75: "e0";
+$opacity-50: "a0";
+$opacity-25: "60";
+
+$opacity-greys-75: "c0";
+$opacity-greys-50: "80";
+$opacity-greys-25: "40";
+
+$olaf-orange-75: #{$olaf-orange}#{$opacity-75};
+$olaf-orange-50: #{$olaf-orange}#{$opacity-50};
+$olaf-orange-25: #{$olaf-orange}#{$opacity-25};
+
+$olaf-red-75: #{$olaf-red}#{$opacity-75};
+$olaf-red-50: #{$olaf-red}#{$opacity-50};
+$olaf-red-25: #{$olaf-red}#{$opacity-25};
+
+$olaf-violet-75: #{$olaf-violet}#{$opacity-75};
+$olaf-violet-50: #{$olaf-violet}#{$opacity-50};
+$olaf-violet-25: #{$olaf-violet}#{$opacity-25};
+
+$olaf-blue-75: #{$olaf-blue}#{$opacity-75};
+$olaf-blue-50: #{$olaf-blue}#{$opacity-50};
+$olaf-blue-25: #{$olaf-blue}#{$opacity-25};
+
+$olaf-turquoise-75: #{$olaf-turquoise}#{$opacity-75};
+$olaf-turquoise-50: #{$olaf-turquoise}#{$opacity-50};
+$olaf-turquoise-25: #{$olaf-turquoise}#{$opacity-25};
+
+$olaf-grey-75: #{$olaf-grey}#{$opacity-greys-75};
+$olaf-grey-50: #{$olaf-grey}#{$opacity-greys-50};
+$olaf-grey-25: #{$olaf-grey}#{$opacity-greys-25};
+
+$olaf-light-grey-75: #{$olaf-light-grey}#{$opacity-greys-75};
+$olaf-light-grey-50: #{$olaf-light-grey}#{$opacity-greys-50};
+$olaf-light-grey-25: #{$olaf-light-grey}#{$opacity-greys-25};
+
+//// DARK-MODE COLORS
+$olaf-white-dmode: #000000;
+$olaf-black-dmode: #f0f0f0;
+$olaf-text-dmode: #f0f0f0;
+
+//// only the regular grey is adjusted for dark mode ('dmode')
+$olaf-grey-dmode: #a0a0a0;
+
+$olaf-grey-dmode-75: #{$olaf-grey-dmode}#{$opacity-greys-75};
+$olaf-grey-dmode-50: #{$olaf-grey-dmode}#{$opacity-greys-50};
+$olaf-grey-dmode-25: #{$olaf-grey-dmode}#{$opacity-greys-25};
+
+//// TERMINAL-MODE COLORS
+$olaf-text-tmode: #28FE14;
+
+/// COLOR MAPS
+$olaf-oranges: (
+    "100": $olaf-orange,
+    "75": $olaf-orange-75,
+    "50": $olaf-orange-50,
+    "25": $olaf-orange-25
+);
+
+$olaf-reds: (
+    "100": $olaf-red,
+    "75": $olaf-red-75,
+    "50": $olaf-red-50,
+    "25": $olaf-red-25
+);
+
+$olaf-violets: (
+    "100": $olaf-violet,
+    "75": $olaf-violet-75,
+    "50": $olaf-violet-50,
+    "25": $olaf-violet-25
+);
+
+$olaf-blues: (
+    "100": $olaf-blue,
+    "75": $olaf-blue-75,
+    "50": $olaf-blue-50,
+    "25": $olaf-blue-25
+);
+
+$olaf-turquoises: (
+    "100": $olaf-turquoise,
+    "75": $olaf-turquoise-75,
+    "50": $olaf-turquoise-50,
+    "25": $olaf-turquoise-25
+);
+
+$olaf-greys: (
+    "100": $olaf-grey,
+    "75": $olaf-grey-75,
+    "50": $olaf-grey-50,
+    "25": $olaf-grey-25
+);
+
+$olaf-light-greys: (
+    "100": $olaf-light-grey,
+    "75": $olaf-light-grey-75,
+    "50": $olaf-light-grey-50,
+    "25": $olaf-light-grey-25
+);
+
+//// DARK-MODE MAPS
+$olaf-greys-dmode: (
+    "100": $olaf-grey-dmode,
+    "75": $olaf-grey-dmode-75,
+    "50": $olaf-grey-dmode-50,
+    "25": $olaf-grey-dmode-25
+);
+
+/// GENERAL
+$olaf-font: "'Chakra Petch', sans-serif";
+$olaf-shadow-color: rgba(0, 0, 0, .175);
+$olaf-shadow-color-dmode: rgba(192, 192, 192, .175);
+$olaf-shadow: 0 0 .8rem .2rem var(--olaf-shadow-color);
+$olaf-shadow-hover: 0 0 2rem .2rem var(--olaf-shadow-color);
+
+$olaf-link: mix($olaf-blue, black, 87.5%);
+$olaf-link-visited: mix($olaf-violet, black, 87.5%);
+$olaf-link-dmode: mix($olaf-blue, white, 62.5%);
+$olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
+
+/// DEFAULTS and OVERRIDE
+@mixin light-mode-defaults {
+    --olaf-font: #{$olaf-font};
+    --olaf-shadow-color: #{$olaf-shadow-color};
+    --olaf-shadow: #{$olaf-shadow};
+    --olaf-shadow-hover: #{$olaf-shadow-hover};
+
+    --olaf-white: #{$olaf-white};
+    --olaf-black: #{$olaf-black};
+    --olaf-text: #{$olaf-text};
+
+    /* link colors are regular blue and violet mixed at 87.5 percent with black (equal to #xxxxxxe0 on black) to increase contrast and legibility */
+    --olaf-link: #{$olaf-link};
+    --olaf-link-visited: #{$olaf-link-visited};
+
+    --olaf-always-white: #{$olaf-white};
+    --olaf-always-black: #{$olaf-black};
+    --olaf-always-text: #{$olaf-text};
+
+    /* e0 is hexadecimal for 87.5 percent */
+    /* c0 is hexadecimal for 75 percent */
+    /* a0 is hexadecimal for 62.5 percent */
+    /* 80 is hexadecimal for 50 percent */
+    /* 60 is hexadecimal for 37.5 percent */
+    /* 40 is hexadecimal for 25 percent */
+
+    --olaf-orange: #{$olaf-orange};
+    --olaf-red: #{$olaf-red};
+    --olaf-violet: #{$olaf-violet};
+    --olaf-blue: #{$olaf-blue};
+    --olaf-turquoise: #{$olaf-turquoise};
+    --olaf-grey: #{$olaf-grey};
+    --olaf-light-grey: #{$olaf-light-grey};
+
+    @each $color, $value in $olaf-oranges {
+        --olaf-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-oranges {
+        --olaf-orange-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-reds {
+        --olaf-red-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-violets {
+        --olaf-violet-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-blues {
+        --olaf-blue-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-turquoises {
+        --olaf-turquoise-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-greys {
+        --olaf-grey-#{$color}: #{$value};
+    }
+
+    @each $color, $value in $olaf-light-greys {
+        --olaf-light-grey-#{$color}: #{$value};
+    }
+}
+
+@mixin light-mode-override {
+    --olaf-shadow-color: #{$olaf-shadow-color};
+    
+    --olaf-white: #{$olaf-white};
+    --olaf-black: #{$olaf-black};
+    --olaf-text: #{$olaf-text};
+    
+    --olaf-link: #{$olaf-link};
+    --olaf-link-visited: #{$olaf-link-visited};
+
+    --olaf-grey: #{$olaf-grey};
+
+    @each $color, $value in $olaf-greys {
+        --olaf-grey-#{$color}: #{$value};
+    }
+    
+    body {
+        &._grey, ._grey {
+            @each $color, $value in $olaf-greys {
+                --olaf-#{$color}: #{$value};
+            }
+        }
+    }
+}
+
+@mixin dark-mode-override {
+    --olaf-shadow-color: #{$olaf-shadow-color-dmode};
+    
+    --olaf-white: #{$olaf-white-dmode};
+    --olaf-black: #{$olaf-black-dmode};
+    --olaf-text: #{$olaf-text-dmode};
+    
+    --olaf-link: #{$olaf-link-dmode};
+    --olaf-link-visited: #{$olaf-link-visited-dmode};
+
+    --olaf-grey: #{$olaf-grey-dmode};
+
+    @each $color, $value in $olaf-greys-dmode {
+        --olaf-grey-#{$color}: #{$value};
+    }
+    
+    body {
+        &._grey, ._grey {
+            @each $color, $value in $olaf-greys-dmode {
+                --olaf-#{$color}: #{$value};
+            }
+        }
+    }
+}
+
+// CSS VARIABLES
+:root {
+    @include light-mode-defaults();
+}
+
+body, .card {
+    transition-duration: .2s;
+    animation-duration: .2s;
+    transition-property: color, background;
+    transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+    animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+
+    &._orange, ._orange {
+        @each $color, $value in $olaf-oranges {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+
+    &._red, ._red {
+        @each $color, $value in $olaf-reds {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+
+    &._violet, ._violet {
+        @each $color, $value in $olaf-violets {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+
+    &._blue, ._blue {
+        @each $color, $value in $olaf-blues {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+
+    &._turquoise, ._turquoise {
+        @each $color, $value in $olaf-turquoises {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+
+    &._grey, ._grey {
+        @each $color, $value in $olaf-greys {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+
+    &._light-grey, ._light-grey {
+        @each $color, $value in $olaf-light-greys {
+            --olaf-#{$color}: #{$value};
+        }
+    }
+}
+
+
+html {
+    &.auto-mode #toggle-auto-mode span {
+        background-color: var(--olaf-light-grey-75) !important;
+    }
+    
+    #svg-moon-fill, #svg-terminal-fill {
+        display: none;
+    }
+
+
+    &.dark-mode, &.terminal-mode {
+        @include dark-mode-override();
+    }
+
+    &.dark-mode {
+        #svg-moon {
+            display: none;
+        }
+
+        #svg-moon-fill {
+            display: inline;
+        }
+    }
+
+    &.terminal-mode {
+        --olaf-text: #{$olaf-text-tmode};
+
+        #svg-terminal {
+            display: none;
+        }
+        
+        #svg-terminal-fill {
+            display: inline;
+        }
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include dark-mode-override();
+    }
+
+    html {
+        #svg-moon {
+            display: none;
+        }
+
+        #svg-moon-fill {
+            display: inline;
+        }
+
+        
+        &.light-mode {
+            @include light-mode-override();
+
+            #svg-moon {
+                display: inline;
+            }
+    
+            #svg-moon-fill {
+                display: none;
+            }
+        }
+
+        &.terminal-mode {
+            --olaf-text: #{$olaf-text-tmode};
+
+            #svg-terminal, #svg-moon-fill {
+                display: none;
+            }
+
+            #svg-terminal-fill, #svg-moon {
+                display: inline;
+            }
+        }
+    }
+}
