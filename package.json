@@ -1,0 +1,16 @@
+{
+  "name": "sfo-olaf",
+  "version": "0.1.0",
+  "description": "Development environment for the olaf.one website",
+  "main": "index.js",
+  "scripts": {
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css assets/scss/:assets/css/",
+    "css-compile-watch": "sass --watch --style expanded --source-map --embed-sources --no-error-css assets/scss/:assets/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "quaggax",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
