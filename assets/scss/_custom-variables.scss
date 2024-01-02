@@ -184,7 +184,7 @@ $olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
     --olaf-grey: #{$olaf-grey};
     --olaf-light-grey: #{$olaf-light-grey};
 
-    @each $color, $value in $olaf-oranges {
+    @each $color, $value in $olaf-light-greys {
         --olaf-#{$color}: #{$value};
     }
 
@@ -267,19 +267,26 @@ $olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
     }
 }
 
+@mixin slanted-corners($size: .4rem) {
+    mask-image: linear-gradient(135deg,transparent $size,gold 0),linear-gradient(-135deg,transparent $size,gold 0),linear-gradient(45deg,transparent $size,gold 0),linear-gradient(-45deg,transparent $size,gold 0);
+    mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+    mask-repeat: no-repeat;
+    mask-size: 51% 51%;
+}
+
 // CSS VARIABLES
 :root {
     @include light-mode-defaults();
 }
 
-body, .card {
+body {
     transition-duration: .2s;
     animation-duration: .2s;
     transition-property: color, background;
     transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
     animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
 
-    &._orange, ._orange {
+    &._orange, ._orange, &._accent, ._accent {
         @each $color, $value in $olaf-oranges {
             --olaf-#{$color}: #{$value};
         }
