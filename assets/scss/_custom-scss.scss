@@ -46,6 +46,9 @@ small {
 }
 
 a:not(.btn, .card) {
+    font-family: var(--olaf-font);
+    text-decoration: none;
+    color: var(--olaf-link);
 
     &:hover {
         text-decoration: underline;
@@ -66,7 +69,7 @@ a:not(.btn, .card) {
         padding-left: .2rem;
     }
 
-    main &:not(.btn, .card, footer a) {
+    main &:not(footer a) {
         font-size: 1.08rem;
         font-weight: 500;
     }
@@ -124,28 +127,27 @@ hr {
     @include slanted-corners();
 }
 
-#breadcrumb,
-#breadcrumb a {
-    font-family: var(--olaf-font);
-    color: var(--olaf-light-grey);
-}
+.olaf-breadcrumb {
+    @extend .print-d-none;
 
-#breadcrumb ol {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-}
-
-#breadcrumb ol li+li {
-    --olaf-breadcrumb-divider-spacing: .5rem;
-    padding-left: var(--olaf-breadcrumb-divider-spacing);
-}
-
-#breadcrumb ol li+li::before {
-    content: "/";
-    padding-right: var(--olaf-breadcrumb-divider-spacing);
+    .breadcrumb {
+        --#{$prefix}breadcrumb-divider: "/";
+        --#{$prefix}breadcrumb-divider-color: inherit;
+        --#{$prefix}breadcrumb-item-active-color: inherit;
+    
+        color: var(--olaf-light-grey);
+    
+        .active a {
+            text-decoration: none;
+            font-weight: 400;
+        }
+    
+        .breadcrumb-item, .breadcrumb-item a {
+            font-family: var(--olaf-font);
+            font-size: 1rem;
+            color: inherit !important;
+        }
+    }
 }
 
 
