@@ -3,7 +3,7 @@
 */
 
 ::selection {
-    background-color: var(--olaf-25);
+    background-color: var(--olaf-orange-25);
 }
 
 :target {
@@ -94,6 +94,11 @@ hr {
 }
 
 .btn {
+    // The normal default color is olaf-grey. This sets it to olaf-light-grey only for .btn elements to maintain legibility.
+    @each $color, $value in $olaf-light-greys {
+        --olaf-#{$color}: #{$value};
+    }
+
     --#{$prefix}btn-font-family: var(--olaf-font);
     --#{$prefix}btn-font-weight: 500;
     --#{$prefix}btn-color: var(--olaf-text);
@@ -106,42 +111,17 @@ hr {
 }
 
 .alert {
-    --olaf-alert-border-color: var(--olaf-grey);
-    --olaf-alert-bg-color: var(--olaf-grey-25);
+    --#{$prefix}alert-bg: var(--olaf-25);
+    --#{$prefix}alert-border-color: var(--olaf-100);
+    --#{$prefix}alert-border: .5rem solid var(--#{$prefix}alert-border-color);
+    --#{$prefix}alert-padding-x: .5rem;
+    --#{$prefix}alert-padding-y: .3rem;
+
     border-top: none;
     border-right: none;
     border-bottom: none;
-    border-left: .5rem solid var(--olaf-alert-border-color);
-    padding: .3rem .5rem;
-    background-color: var(--olaf-alert-bg-color);
 
     @include slanted-corners();
-}
-
-.alert-orange,
-.alert-accent {
-    --olaf-alert-border-color: var(--olaf-orange) !important;
-    --olaf-alert-bg-color: var(--olaf-orange-25) !important;
-}
-
-.alert-red {
-    --olaf-alert-border-color: var(--olaf-red) !important;
-    --olaf-alert-bg-color: var(--olaf-red-25) !important;
-}
-
-.alert-violet {
-    --olaf-alert-border-color: var(--olaf-violet) !important;
-    --olaf-alert-bg-color: var(--olaf-violet-25) !important;
-}
-
-.alert-blue {
-    --olaf-alert-border-color: var(--olaf-blue) !important;
-    --olaf-alert-bg-color: var(--olaf-blue-25) !important;
-}
-
-.alert-turquoise {
-    --olaf-alert-border-color: var(--olaf-turquoise) !important;
-    --olaf-alert-bg-color: var(--olaf-turquoise-25) !important;
 }
 
 #breadcrumb,
@@ -334,13 +314,13 @@ section:not(section:first-of-type, #announcements, #welcome) {
 }
 
 #announcements .alert:nth-of-type(odd) {
-    --olaf-alert-border-color: var(--olaf-violet);
-    --olaf-alert-bg-color: var(--olaf-violet-25);
+    --#{$prefix}alert-bg: var(--olaf-violet-25);
+    --#{$prefix}alert-border-color: var(--olaf-violet);
 }
 
 #announcements .alert:nth-of-type(even) {
-    --olaf-alert-border-color: var(--olaf-red);
-    --olaf-alert-bg-color: var(--olaf-red-25);
+    --#{$prefix}alert-bg: var(--olaf-red-25);
+    --#{$prefix}alert-border-color: var(--olaf-red);
 }
 
 

@@ -184,7 +184,7 @@ $olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
     --olaf-grey: #{$olaf-grey};
     --olaf-light-grey: #{$olaf-light-grey};
 
-    @each $color, $value in $olaf-light-greys {
+    @each $color, $value in $olaf-greys {
         --olaf-#{$color}: #{$value};
     }
 
@@ -230,6 +230,10 @@ $olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
     --olaf-grey: #{$olaf-grey};
 
     @each $color, $value in $olaf-greys {
+        --olaf-#{$color}: #{$value};
+    }
+    
+    @each $color, $value in $olaf-greys {
         --olaf-grey-#{$color}: #{$value};
     }
     
@@ -254,6 +258,10 @@ $olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
 
     --olaf-grey: #{$olaf-grey-dmode};
 
+    @each $color, $value in $olaf-greys-dmode {
+        --olaf-#{$color}: #{$value};
+    }
+    
     @each $color, $value in $olaf-greys-dmode {
         --olaf-grey-#{$color}: #{$value};
     }
