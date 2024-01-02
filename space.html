@@ -56,75 +56,70 @@
 
 <body>
     <div class="row g-0">
-        <nav id="nav-site" class="navbar navbar-expand-lg col-lg-3 align-items-start justify-content-center p-0 print-d-none">
+        <nav class="olaf-navbar">
             <!-- The following div (#nav-site-container) is here so that the following items naturally have the same width as the image. This is also handy because the #nav-site element gets its width defined through its col class (this is a defined width). This allows free positioning of the #nav-site-container inside that pre-defined box (#nav-site). -->
-            <div id="nav-site-container" class="d-flex flex-lg-column text-lg-start text-center">
-                <a href="index.html" id="navbar-logo" class="text-center my-0 my-lg-2">
+            <div class="olaf-navbar__container">
+                <a href="index.html" class="olaf-navbar__brand">
                     <img src="assets/images/oLaF_v1.png" alt="oLaF Logo">
-                    <p class="h1 mb-0">oLaF <em>SFO</em></p>
+                    <p>oLaF <i>SFO</i></p>
                 </a>
-                <button id="navbar-toggler" class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                    <div class="bootstrap-icons fs-1">&#xF479;</div>
+                <button class="olaf-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#olaf-navbar__nav" aria-controls="olaf-navbar__nav" aria-expanded="true" aria-label="Navigation ausklappen">
+                    <div class="olaf-navbar__toggler-icon">&#xF479;</div>
                 </button>
                 <!-- navbar toggler for mobile -->
-                <div id="navbarNav" class="collapse show navbar-collapse flex-column">
-                    <ul id="olaf-nav" class="navbar-nav flex-lg-column text-start w-100 mx-auto mb-auto">
+                <div id="olaf-navbar__nav" class="olaf-navbar__nav collapse show">
+                    <ul class="olaf-navbar__site">
                         <li class="nav-item first">
                             <a href="index.html" class="nav-link">
-                                <span class="bootstrap-icons">&#xF845;</span> oLaF
+                                <span class="nav-link__icon">&#xF845;</span> oLaF
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="about.html" class="nav-link">
-                                <span class="bootstrap-icons">&#xF431;</span> About
+                                <span class="nav-link__icon">&#xF431;</span> About
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="space.html" class="nav-link active">
-                                <span class="bootstrap-icons">&#xF308;</span>
+                                <span class="nav-link__icon">&#xF308;</span>
                                 Space
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="projekte.html" class="nav-link">
-                                <span class="bootstrap-icons">&#xF4A9;</span>
+                                <span class="nav-link__icon">&#xF4A9;</span>
                                 Projekte
                             </a>
                         </li>
                         <li class="nav-item last">
                             <a href="foerderverein.html" class="nav-link">
-                                <span class="bootstrap-icons">&#xF3FC;</span>
+                                <span class="nav-link__icon">&#xF3FC;</span>
                                 Förderverein
                             </a>
                         </li>
                     </ul>
-                    <hr class="m-0">
-                    <div id="olaf-socials" class="d-flex flex-row flex-wrap justify-content-center justify-content-lg-start">
-                        <a href="https://www.youtube.com/@oLaF-SFO" target="_blank" id="youtube-link">
-                            <span class="bootstrap-icons">&#xF62B;</span>
+                    <hr class="olaf-navbar__divider">
+                    <div class="olaf-navbar__socials">
+                        <a href="https://www.youtube.com/@oLaF-SFO" class="olaf-navbar__socials__link" target="_blank" id="youtube-link">
+                            <span class="olaf-navbar__socials__icon">&#xF62B;</span>
                         </a>
-                        <a href="https://www.instagram.com/olaf.sfo/" target="_blank" id="instagram-link">
-                            <span class="bootstrap-icons">&#xF437;</span>
+                        <a href="https://www.instagram.com/olaf.sfo/" class="olaf-navbar__socials__link" target="_blank" id="instagram-link">
+                            <span class="olaf-navbar__socials__icon">&#xF437;</span>
                         </a>
-                        <a href="" target="_blank" id="rss-link">
-                            <span class="bootstrap-icons">&#xF522;</span>
+                        <a href="" class="olaf-navbar__socials__link" target="_blank" id="rss-link">
+                            <span class="olaf-navbar__socials__icon">&#xF522;</span>
                         </a>
                     </div>
-                    <div id="olaf-links" class="navbar-nav flex-lg-column flex-row flex-wrap justify-content-center">
-                        <span class="nav-item">
-                            <a href="https://maker.schule">maker.schule</a>
-                        </span>
-                        <span class="nav-item">
-                            <a href="https://stein.schule">stein.schule</a>
-                        </span>
+                    <div class="olaf-navbar__links">
+                        <a href="https://maker.schule">maker.schule</a>
+                        <a href="https://stein.schule">stein.schule</a>
                     </div>
-                    <hr class="m-0 d-lg-none">
+                    <hr class="olaf-navbar__divider olaf-navbar__divider_end">
                 </div>
-                <!-- end navbarNav -->
                 <script>
                     // this script enables the use of the navbar on mobile devices with JavaScript disabled
-                    document.getElementById('navbar-toggler').ariaExpanded = false;
-                    document.getElementById('navbarNav').classList.remove('show');
+                    document.getElementsByClassName('olaf-navbar__toggler')[0].ariaExpanded = false;
+                    document.getElementById('olaf-navbar__nav').classList.remove('show');
                 </script>
             </div>
         </nav>
@@ -146,7 +141,7 @@
                 </script>
                 <h1>Der Macherraum</h1>
                 <section id="space-carousel">
-                    <div id="carouselExampleIndicators" class="carousel slide slanted-corners" data-bs-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide _slanted-corners" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -176,29 +171,29 @@
                 <section id="space-gallery" class="gallery">
                     <div id="space-gallery-container" class="row">
                         <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Das ist ein Beispiel-Titel.">
-                            <img src="assets/images/banner.png" alt="" class="slanted-corners">
+                            <img src="assets/images/banner.png" alt="" class="_slanted-corners">
                             <small>Das ist ein Beispiel-Titel.</small>
                         </a>
                         <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Der Böhrer">
-                            <img src="assets/images/download.png" alt="" class="slanted-corners">
+                            <img src="assets/images/download.png" alt="" class="_slanted-corners">
                             <small>Der Böhrer</small>
                         </a>
                         <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Unsere Spülsabine">
-                            <img src="assets/images/banner.png" alt="" class="slanted-corners">
+                            <img src="assets/images/banner.png" alt="" class="_slanted-corners">
                             <small>Unsere Spülsabine</small>
                         </a>
                         <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Unsere 3D-Drucker Kollektion">
-                            <img src="assets/images/about_banner.png" alt="" class="slanted-corners">
+                            <img src="assets/images/about_banner.png" alt="" class="_slanted-corners">
                             <small>Unsere 3D-Drucker Kollektion</small>
                         </a>
                         <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
-                            <img src="assets/images/about_banner.png" alt="" class="slanted-corners">
+                            <img src="assets/images/about_banner.png" alt="" class="_slanted-corners">
                         </a>
                         <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
-                            <img src="assets/images/banner.png" alt="" class="slanted-corners">
+                            <img src="assets/images/banner.png" alt="" class="_slanted-corners">
                         </a>
                         <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
-                            <img src="assets/images/download.png" alt="" class="slanted-corners">
+                            <img src="assets/images/download.png" alt="" class="_slanted-corners">
                         </a>
                     </div>
                     <link rel="stylesheet" href="assets/libraries/simpleLightbox/simpleLightbox.min.css">

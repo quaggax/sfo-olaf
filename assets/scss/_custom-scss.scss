@@ -45,7 +45,7 @@ small {
     font-weight: 500;
 }
 
-a:not(.btn, .card) {
+a {
     font-family: var(--olaf-font);
     text-decoration: none;
     color: var(--olaf-link);
@@ -59,12 +59,12 @@ a:not(.btn, .card) {
         color: var(--olaf-link-visited);
     }
 
-    &.external:not(#olaf-socials a)::after,
-    &[href*="://"]:not(#olaf-socials a)::after,
-    &[href*="www."]:not(#olaf-socials a)::after {
+    &.external:not(.olaf-navbar__socials a)::after,
+    &[href*="://"]:not(.olaf-navbar__socials a)::after,
+    &[href*="www."]:not(.olaf-navbar__socials a)::after {
         content: '\F1C5';
         display: inline-block;
-        font-family: Bootstrap-icons, var(--bs-font-sans-serif);
+        font-family: 'bootstrap-icons', var(--bs-font-sans-serif);
         font-size: .8rem;
         padding-left: .2rem;
     }
@@ -72,6 +72,20 @@ a:not(.btn, .card) {
     main &:not(footer a) {
         font-size: 1.08rem;
         font-weight: 500;
+    }
+}
+
+@mixin olaf-link-reset() {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &:visited {
+        color: inherit;
     }
 }
 
@@ -88,15 +102,17 @@ hr {
     second: entire elements/components
 */
 
-.olaf-font {
+._olaf-font {
     font-family: var(--olaf-font);
 }
 
-.slanted-corners {
+._slanted-corners {
     @include slanted-corners();
 }
 
 .btn {
+    @include olaf-link-reset();
+
     // The normal default color is olaf-grey. This sets it to olaf-light-grey only for .btn elements to maintain legibility.
     @each $color, $value in $olaf-light-greys {
         --olaf-#{$color}: #{$value};
@@ -134,15 +150,16 @@ hr {
         --#{$prefix}breadcrumb-divider: "/";
         --#{$prefix}breadcrumb-divider-color: inherit;
         --#{$prefix}breadcrumb-item-active-color: inherit;
-    
+
         color: var(--olaf-light-grey);
-    
+
         .active a {
             text-decoration: none;
             font-weight: 400;
         }
-    
-        .breadcrumb-item, .breadcrumb-item a {
+
+        .breadcrumb-item,
+        .breadcrumb-item a {
             font-family: var(--olaf-font);
             font-size: 1rem;
             color: inherit !important;
@@ -151,161 +168,251 @@ hr {
 }
 
 
-#nav-site #navbar-logo {
-    color: inherit;
-    text-decoration: none;
+.olaf-navbar {
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .col-lg-3;
+    @extend .align-items-start;
+    @extend .justify-content-center;
+    @extend .p-0;
+    @extend .print-d-none;
+
+    &__container {
+        @extend .d-flex;
+        @extend .flex-lg-column;
+        @extend .text-lg-start;
+        @extend .text-center;
+    }
+
+    &__brand {
+        @extend .text-center;
+        @extend .my-0;
+        @extend .my-lg-2;
+
+        @include olaf-link-reset();
+
+        color: inherit;
+        text-decoration: none;
+
+        img {
+            height: 4rem;
+        }
+
+        p {
+            @extend .h1;
+            @extend .mb-0;
+
+            font-weight: 700;
+
+            i {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__toggler {
+        @extend .navbar-toggler;
+        @extend .btn;
+
+        &.btn,
+        &.btn:active {
+            color: var(--olaf-grey);
+            background-color: var(--olaf-light-grey-25);
+            border: none;
+        }
+
+        &-icon {
+            @extend ._bootstrap-icons;
+            @extend .fs-1;
+
+            transition-duration: .3s;
+            animation-duration: .3s;
+            transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+            animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+        }
+
+        &[aria-expanded=true] &-icon {
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__nav {
+        @extend .navbar-collapse;
+        @extend .flex-column;
+
+        /* bootstrap class (only added during transition) */
+        &.collapsing {
+            transition-duration: .3s;
+            animation-duration: .3s;
+            transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+            animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
+        }
+    }
+
+    &__site {
+        @extend .navbar-nav;
+        @extend .flex-lg-column;
+        @extend .text-start;
+        @extend .w-100;
+        @extend .mx-auto;
+        @extend .mb-auto;
+
+        --#{$prefix}nav-link-color: var(--olaf-text);
+        --#{$prefix}nav-link-font-weight: 500;
+        --#{$prefix}nav-link-padding-x: .5rem;
+        --#{$prefix}nav-link-padding-y: .5rem;
+
+        max-width: 60vw;
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            @include olaf-link-reset();
+
+            letter-spacing: .1rem;
+            transition: none;
+            line-height: normal;
+
+            @include slanted-corners();
+
+            &.active {
+                background-color: var(--olaf-50);
+            }
+
+            &:hover {
+                background-color: var(--olaf-25);
+            }
+
+            &__icon {
+                @extend ._bootstrap-icons;
+
+                font-size: 21px;
+            }
+        }
+
+        .nav-item:nth-child(1) {
+            @extend ._orange;
+        }
+
+        .nav-item:nth-child(2) {
+            @extend ._red;
+        }
+
+        .nav-item:nth-child(3) {
+            @extend ._violet;
+        }
+
+        .nav-item:nth-child(4) {
+            @extend ._blue;
+        }
+
+        .nav-item:nth-child(5) {
+            @extend ._turquoise;
+        }
+    }
+
+    &__socials {
+        @extend .d-flex;
+        @extend .flex-row;
+        @extend .flex-wrap;
+        @extend .justify-content-center;
+        @extend .justify-content-lg-start;
+
+        width: 100%;
+        color: var(--olaf-light-grey);
+
+        &__link {
+            @include olaf-link-reset();
+
+            border: none;
+            background: none;
+            font-size: 1.125rem;
+            padding: .25rem .5rem;
+
+            &:hover {
+                color: var(--olaf-light-grey-75);
+                text-decoration: none;
+            }
+        }
+
+        &__icon {
+            @extend ._bootstrap-icons;
+        }
+    }
+
+    &__links {
+        @extend .flex-lg-column;
+        @extend .flex-row;
+        @extend .flex-wrap;
+        @extend .justify-content-center;
+
+        display: flex;
+
+        a {
+            color: var(--olaf-light-grey);
+            display: block;
+            padding: .25rem;
+        }
+    }
+
+    &__divider {
+        @extend .m-0;
+
+        &_end {
+            @extend .d-lg-none;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        & {
+            margin: .5rem 0;
+            
+            &__container {
+                flex-wrap: inherit;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 1rem;
+            }
+        
+            &__brand {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        & {
+            position: -webkit-fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            
+            &__container {
+                height: 100vh;
+                overflow: scroll;
+                margin: 0 1.5rem;
+            }
+            
+            &__brand img {
+                height: auto;
+                max-height: 20vh !important;
+                max-width: 100%;
+            }
+            
+            &__links {
+                width: 100%;
+            }
+        }
+    
+    }
 }
-
-#nav-site #navbar-logo img {
-    height: 4rem;
-}
-
-#nav-site #navbar-logo p {
-    font-weight: 700;
-}
-
-#nav-site #navbar-logo p em {
-    font-weight: 400;
-}
-
-#nav-site button.btn,
-#nav-site button.btn:active {
-    color: var(--olaf-grey);
-    background-color: var(--olaf-light-grey-25);
-    border: none;
-}
-
-#nav-site button div {
-    transition-duration: .3s;
-    animation-duration: .3s;
-    transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
-    animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
-}
-
-#nav-site button[aria-expanded=true] div {
-    transform: rotate(-90deg);
-}
-
-/* bootstrap class (only added during transition) */
-#navbarNav.collapsing {
-    transition-duration: .3s;
-    animation-duration: .3s;
-    transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
-    animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
-}
-
-#olaf-nav {
-    max-width: 60vw;
-}
-
-#olaf-nav .nav-item {
-    margin-bottom: 0.5rem;
-}
-
-#olaf-nav a.nav-link {
-    color: var(--olaf-text);
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: .1rem;
-    transition: none;
-    line-height: normal;
-    padding: .5rem;
-
-
-    @include slanted-corners();
-}
-
-#olaf-nav a.nav-link.active {
-    color: var(--olaf-text);
-    background-color: var(--olaf-light-grey-50);
-}
-
-#olaf-nav a.nav-link:hover {
-    color: var(--olaf-text);
-    background-color: var(--olaf-light-grey-25);
-}
-
-#olaf-nav li.nav-item:nth-child(1) a.nav-link.active {
-    color: var(--olaf-text);
-    background-color: var(--olaf-orange-50);
-}
-
-#olaf-nav li.nav-item:nth-child(2) a.nav-link.active {
-    color: var(--olaf-text);
-    background-color: var(--olaf-red-50);
-}
-
-#olaf-nav li.nav-item:nth-child(3) a.nav-link.active {
-    color: var(--olaf-text);
-    background-color: var(--olaf-violet-50);
-}
-
-#olaf-nav li.nav-item:nth-child(4) a.nav-link.active {
-    color: var(--olaf-text);
-    background-color: var(--olaf-blue-50);
-}
-
-#olaf-nav li.nav-item:nth-child(5) a.nav-link.active {
-    color: var(--olaf-text);
-    background-color: var(--olaf-turquoise-50);
-}
-
-#olaf-nav li.nav-item:nth-child(1) a.nav-link:hover {
-    color: var(--olaf-text);
-    background-color: var(--olaf-orange-25);
-}
-
-#olaf-nav li.nav-item:nth-child(2) a.nav-link:hover {
-    color: var(--olaf-text);
-    background-color: var(--olaf-red-25);
-}
-
-#olaf-nav li.nav-item:nth-child(3) a.nav-link:hover {
-    color: var(--olaf-text);
-    background-color: var(--olaf-violet-25);
-}
-
-#olaf-nav li.nav-item:nth-child(4) a.nav-link:hover {
-    color: var(--olaf-text);
-    background-color: var(--olaf-blue-25);
-}
-
-#olaf-nav li.nav-item:nth-child(5) a.nav-link:hover {
-    color: var(--olaf-text);
-    background-color: var(--olaf-turquoise-25);
-}
-
-#olaf-nav a.nav-link span.bootstrap-icons {
-    font-size: 21px;
-}
-
-#olaf-socials {
-    width: 100%;
-}
-
-#olaf-socials a {
-    border: none;
-    background: none;
-    color: var(--olaf-light-grey);
-    font-size: 1.125rem;
-    padding: .25rem .5rem;
-}
-
-#olaf-socials a:hover {
-    color: var(--olaf-light-grey-75);
-    text-decoration: none;
-}
-
-#olaf-links .nav-item {
-    font-family: var(--olaf-font);
-    padding: 0.25rem;
-    color: var(--olaf-light-grey) !important;
-}
-
-#olaf-links .nav-item a {
-    color: var(--olaf-light-grey);
-}
-
 
 section {
     margin-bottom: 1rem;
@@ -377,6 +484,7 @@ section:not(section:first-of-type, #announcements, #welcome) {
 }
 
 .card {
+    font-size: 1rem;
     border: none;
     background-color: var(--olaf-white);
     margin-bottom: 1rem;
@@ -421,6 +529,9 @@ a.card:visited {
 }
 
 .card .card-body .card-text {
+    font-family: var(--#{$prefix}body-font-family);
+    font-weight: var(--#{$prefix}body-font-weight);
+    font-size: var(--#{$prefix}body-font-size);
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 7;
@@ -468,7 +579,7 @@ a.card:visited {
     vertical-align: bottom;
 }
 
-#footer-toggles button span.bootstrap-icons {
+#footer-toggles button span._bootstrap-icons {
     font-size: 18px;
 }
 
@@ -541,25 +652,6 @@ a.card:visited {
 
 /* !! max width */
 @media (max-width: 992px) {
-    #nav-site {
-        margin: .5rem 0;
-    }
-
-    #nav-site #nav-site-container {
-        flex-wrap: inherit;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 1rem;
-    }
-
-    #nav-site #nav-site-container #navbar-logo {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-    }
-
     #events .card .card-body .card-text {
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -570,30 +662,6 @@ a.card:visited {
 
 /* !! min width */
 @media (min-width: 992px) {
-    #nav-site {
-        position: -webkit-fixed;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
-    }
-
-    #nav-site #navbar-logo img {
-        height: auto;
-        max-height: 20vh !important;
-        max-width: 100%;
-    }
-
-    #nav-site #nav-site-container {
-        height: 100vh;
-        overflow: scroll;
-        margin: 0 1.5rem;
-    }
-
-    #olaf-links {
-        width: 100%;
-    }
-
     #cookie-prompt .alert {
         width: 50%;
     }
