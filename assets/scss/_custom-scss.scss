@@ -499,21 +499,18 @@ section {
     }
 }
 
-#welcome #welcome-text {
-    margin-bottom: 1rem;
-}
+// no .olaf-text styling needed. just simple html inside
 
-
-.cta-group {
+.olaf-cta-group {
     text-align: center;
     margin-bottom: 1rem;
-}
-
-/* copied from bootstrap class (.btn-lg) to make button larger */
-.cta-group.cta-group-lg>.btn {
-    --bs-btn-padding-y: 0.5rem;
-    --bs-btn-padding-x: 1rem;
-    --bs-btn-font-size: 1.25rem;
+    
+    /* copied from bootstrap class (.btn-lg) to make button larger */
+    &._lg>.btn {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 1.25rem;
+    }
 }
 
 

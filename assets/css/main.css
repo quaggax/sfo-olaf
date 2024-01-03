@@ -9380,17 +9380,12 @@ section._spacer {
   font-weight: 400;
 }
 
-#welcome #welcome-text {
-  margin-bottom: 1rem;
-}
-
-.cta-group {
+.olaf-cta-group {
   text-align: center;
   margin-bottom: 1rem;
+  /* copied from bootstrap class (.btn-lg) to make button larger */
 }
-
-/* copied from bootstrap class (.btn-lg) to make button larger */
-.cta-group.cta-group-lg > .btn, .cta-group.cta-group-lg > .olaf-navbar__toggler {
+.olaf-cta-group._lg > .btn, .olaf-cta-group._lg > .olaf-navbar__toggler {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
