@@ -113,25 +113,20 @@ hr {
 .btn {
     @include olaf-link-reset();
 
-    // The normal default color is olaf-grey. This sets it to olaf-light-grey only for .btn elements to maintain legibility.
-    @each $color, $value in $olaf-light-greys {
-        --olaf-#{$color}: #{$value};
-    }
-
     --#{$prefix}btn-font-family: var(--olaf-font);
     --#{$prefix}btn-font-weight: 500;
     --#{$prefix}btn-color: var(--olaf-text);
-    --#{$prefix}btn-bg: var(--olaf-75);
-    --#{$prefix}btn-hover-bg: var(--olaf-50);
-    --#{$prefix}btn-active-bg: var(--olaf-25);
+    --#{$prefix}btn-bg: #{default-color(75, "light-grey")};
+    --#{$prefix}btn-hover-bg: #{default-color(50, "light-grey")};
+    --#{$prefix}btn-active-bg: #{default-color(25, "light-grey")};
     --#{$prefix}btn-border-width: 0;
 
     @include slanted-corners();
 }
 
 .alert {
-    --#{$prefix}alert-bg: var(--olaf-25);
-    --#{$prefix}alert-border-color: var(--olaf-100);
+    --#{$prefix}alert-bg: #{default-color(25)};
+    --#{$prefix}alert-border-color: #{default-color(100)};
     --#{$prefix}alert-border: .5rem solid var(--#{$prefix}alert-border-color);
     --#{$prefix}alert-padding-x: .5rem;
     --#{$prefix}alert-padding-y: .3rem;
@@ -278,11 +273,11 @@ hr {
             @include slanted-corners();
 
             &.active {
-                background-color: var(--olaf-50);
+                background-color: #{default-color(50)};
             }
 
             &:hover {
-                background-color: var(--olaf-25);
+                background-color: #{default-color(25)};
             }
 
             &__icon {
@@ -445,7 +440,7 @@ section {
 .olaf-image {
     .__container {
         display: flex;
-        color: var(--olaf-always-white);
+        color: var(--olaf-text);
         width: 100%;
         flex-direction: column;
     }
@@ -473,7 +468,8 @@ section {
             @extend ._slanted-corners;
 
             position: relative;
-            background-color: var(--olaf-100);
+            background-color: #{default-color(100)};
+            color: var(--olaf-always-white);
 
             &::before {
                 content: '';
@@ -504,7 +500,7 @@ section {
 .olaf-cta-group {
     text-align: center;
     margin-bottom: 1rem;
-    
+
     /* copied from bootstrap class (.btn-lg) to make button larger */
     &._lg>.btn {
         --bs-btn-padding-y: 0.5rem;
@@ -513,77 +509,145 @@ section {
     }
 }
 
+.olaf-row {
+    @extend .row;
 
-.card-shadow {
+    .__col {
+        @extend .col-12;
+        @extend .col-md-6;
+        @extend .col-xxl-4;
+    }
+
+    &._one-row {
+        .__col:nth-child(n + 3) {
+            @extend .d-md-none;
+            @extend .d-xxl-block;
+        }
+    }
+}
+
+.olaf-card {
     transition-duration: .3s;
     animation-duration: .3s;
     transition-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
     animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
     transition-property: all;
+
+    display: block;
     border-radius: 16px;
     /* yes it has to be exactly 16px to match the slanted corners as closely as possible (that's needed because the radius also effects the box-shadow) */
     box-shadow: var(--olaf-shadow);
-}
 
-.card-shadow:hover,
-#events .card-shadow:active {
-    box-shadow: var(--olaf-shadow-hover);
-    transform: scale(1.02);
-}
+    &:hover,
+    &:active {
+        box-shadow: var(--olaf-shadow-hover);
+        transform: scale(1.02);
+    }
 
-.card {
-    font-size: 1rem;
-    border: none;
-    background-color: var(--olaf-white);
-    margin-bottom: 1rem;
-}
+    .__container {
+        @extend .card;
 
-a.card,
-a.card:visited {
-    color: var(--olaf-text);
-    text-decoration: none;
-}
+        --#{$prefix}card-bg: var(--olaf-white);
 
-.card.card-image-container {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+        @include olaf-link-reset();
 
-.card.card-image-container .card-body {
-    color: var(--olaf-always-white);
-}
+        font-size: 1rem;
+        border: none;
+        margin-bottom: 1rem;
 
-.card.card-image-container .card-body .card-categories {
-    color: var(--olaf-always-white);
-}
+        @include slanted-corners();
+    }
 
-.card .card-body .card-title {
-    margin-bottom: 0;
-}
+    .__img {
+        aspect-ratio: 8/5;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
 
-.card .card-body .card-subtitle {
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    color: var(--olaf-violet);
-}
+        &[src=""] {
+            display: none;
+        }
+    }
 
-.card .card-body .card-categories {
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    color: var(--olaf-grey);
-}
+    .__body {
+        @extend .card-body;
 
-.card .card-body .card-text {
-    font-family: var(--#{$prefix}body-font-family);
-    font-weight: var(--#{$prefix}body-font-weight);
-    font-size: var(--#{$prefix}body-font-size);
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;
-    overflow: hidden;
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .__title {
+        @extend .card-title;
+        @extend .h4;
+
+        margin-bottom: 0;
+    }
+
+    .__subtitle {
+        @extend .card-subtitle;
+
+        --#{$prefix}card-subtitle-color: #{default-color(100, "light-grey")};
+
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+    }
+
+    .__text {
+        @extend .card-text;
+
+        font-family: var(--#{$prefix}body-font-family);
+        font-weight: var(--#{$prefix}body-font-weight);
+        font-size: var(--#{$prefix}body-font-size);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
+        overflow: hidden;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .__img {
+            aspect-ratio: 1/1;
+        }
+    }
+    
+    @include media-breakpoint-up(xl) {
+        .__text {
+            -webkit-line-clamp: 5;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .__text {
+            -webkit-line-clamp: 5;
+        }
+    }
+
+    &._bg-img {
+        .__container {
+            background-color: #{default-color(100)};
+
+            &::before {
+                content: '';
+                background-image: linear-gradient(#00000080, #00000080);
+                position: absolute;
+                inset: 0;
+            }
+        }
+
+        .__img {
+            &[src=""] {
+                display: block;
+            }
+        }
+
+        .__body {
+            position: absolute;
+            bottom: 0;
+            color: var(--olaf-always-white);
+        }
+    }
 }
 
 
@@ -663,8 +727,12 @@ a.card:visited {
 /*
     page specific adjustments
 */
-#events #future-events .card .card-body small {
-    color: var(--olaf-orange);
+#events {
+    @extend ._violet;
+
+    #future-events {
+        @extend ._orange;
+    }
 }
 
 #about-history p {
@@ -698,16 +766,6 @@ a.card:visited {
     responsive properties
 */
 
-/* !! max width */
-@media (max-width: 992px) {
-    #events .card .card-body .card-text {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 5;
-        overflow: hidden;
-    }
-}
-
 /* !! min width */
 @media (min-width: 992px) {
     #cookie-prompt .alert {
@@ -733,12 +791,17 @@ a.card:visited {
         display: block !important;
         background-color: #ffffff;
         padding: .5rem;
+        
+        img {
+            height: 3rem;
+            margin: .5rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 
-    #olaf-synopsis img {
-        height: 3rem;
-        margin: .5rem;
-    }
 
     body {
         height: 88vh;
