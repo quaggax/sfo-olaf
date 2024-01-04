@@ -663,64 +663,68 @@ section {
     text-decoration: none;
 }
 
-
-#footer {
+.olaf-footer {
+    @extend .print-d-none;
+    
     text-align: center;
-}
+    
+    #cookie-prompt {
+        text-align: left;
+        
+        .alert {
+            margin: 0 auto;
 
-#footer #cookie-prompt {
-    text-align: left;
-}
+            @include media-breakpoint-up(sm) {
+                width: 50%;
+            }
+        }
+    }
 
-#footer #cookie-prompt .alert {
-    margin: 0 auto;
-}
+    .__themes {
+        width: 100%;
+    }
 
-#footer-toggles {
-    width: 100%;
-}
+    .__toggle {
+        border: none;
+        background: none;
+        color: var(--olaf-light-grey);
+        padding: .5rem;
+    }
 
-#footer-toggles button {
-    border: none;
-    background: none;
-    color: var(--olaf-light-grey);
-    padding: .5rem;
-}
+    .__toggle-icon {
+        @extend ._bootstrap-icons;
+    }
 
-#footer-toggles button svg {
-    vertical-align: bottom;
-}
+    #toggle-auto-mode {
+        vertical-align: middle;
 
-#footer-toggles button span._bootstrap-icons {
-    font-size: 18px;
-}
+        span {
+            font-family: var(--olaf-font);
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: .8rem;
+            color: var(--olaf-text);
+            vertical-align: top;
+            padding: .125rem .25rem;
+            background-color: var(--olaf-light-grey-25);
+            
+            @include slanted-corners(.2rem);
+        }
+    }
 
-#footer-toggles #toggle-auto-mode {
-    vertical-align: middle;
-}
+    .__legal {
+        width: 100%;
 
-#footer-toggles #toggle-auto-mode span {
-    font-family: var(--olaf-font);
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: .8rem;
-    color: var(--olaf-text);
-    vertical-align: top;
-    padding: .125rem .25rem;
-    background-color: var(--olaf-light-grey-25);
+        .__item {
+            font-family: var(--olaf-font);
+            padding: 0.25rem;
+            color: var(--olaf-light-grey);
 
-    @include slanted-corners(.2rem);
-}
-
-
-#footer .footer-item {
-    font-family: var(--olaf-font);
-    padding: 0.25rem;
-    color: var(--olaf-light-grey) !important;
-}
-
-#footer .footer-item a {
-    color: var(--olaf-light-grey);
+            a {
+                @include olaf-link-reset();
+            }
+        }
+    }
 }
 
 
@@ -759,18 +763,6 @@ section {
     letter-spacing: .1rem;
     text-transform: uppercase;
     color: var(--olaf-grey);
-}
-
-
-/*
-    responsive properties
-*/
-
-/* !! min width */
-@media (min-width: 992px) {
-    #cookie-prompt .alert {
-        width: 50%;
-    }
 }
 
 
