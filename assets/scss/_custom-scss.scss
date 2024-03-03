@@ -163,6 +163,29 @@ hr {
 }
 
 
+.layout-site {
+    @extend .row;
+    @extend .g-0;
+}
+
+.layout-navbar-spacer {
+    @extend .col-lg-3;
+    @extend .print-d-none;
+}
+
+.layout-main {
+    @extend .col-xl-6;
+    @extend .col-lg-8;
+    @extend .print-w-100;
+
+    &__container {
+        @extend .mx-3;
+        @extend .mb-3;
+        @extend .mt-0;
+        @extend .mt-lg-3;
+    }
+}
+
 .olaf-navbar {
     @extend .navbar;
     @extend .navbar-expand-lg;
@@ -274,6 +297,7 @@ hr {
 
             &.active {
                 background-color: #{default-color(50)};
+                color: var(--olaf-text);
             }
 
             &:hover {
@@ -611,7 +635,7 @@ section {
             aspect-ratio: 1/1;
         }
     }
-    
+
     @include media-breakpoint-up(xl) {
         .__text {
             -webkit-line-clamp: 5;
@@ -665,12 +689,12 @@ section {
 
 .olaf-footer {
     @extend .print-d-none;
-    
+
     text-align: center;
-    
+
     #cookie-prompt {
         text-align: left;
-        
+
         .alert {
             margin: 0 auto;
 
@@ -707,7 +731,7 @@ section {
             vertical-align: top;
             padding: .125rem .25rem;
             background-color: var(--olaf-light-grey-25);
-            
+
             @include slanted-corners(.2rem);
         }
     }
@@ -721,7 +745,7 @@ section {
             color: var(--olaf-light-grey);
 
             a {
-                @include olaf-link-reset();
+                color: var(--olaf-light-grey);
             }
         }
     }
@@ -783,7 +807,7 @@ section {
         display: block !important;
         background-color: #ffffff;
         padding: .5rem;
-        
+
         img {
             height: 3rem;
             margin: .5rem;
