@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <!-- <base href="/sfo-olaf/"> -->
+    <base href="/sfo-olaf/">
     <link rel="canonical" href="https://example.com/">
 
     <!-- meta tags -->
-    <title>Förderverein // oLaF SFO</title>
+    <title>{{ title }} // oLaF SFO</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive,max-snippet:-1">
@@ -33,9 +33,32 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- additional meta tags -->
+    {% if navActive == 1 %}
+    <meta name="theme-color" content="#ffb760" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#9f5800" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ff8c00">
+    {% elif navActive == 2 %}
+    <meta name="theme-color" content="#df8080" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#802020" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#cc3333">
+    {% elif navActive == 3 %}
+    <meta name="theme-color" content="#d288d7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#722877" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#b740bf">
+    {% elif navActive == 4 %}
+    <meta name="theme-color" content="#8891d7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#283177" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#404fbf">
+    {% elif navActive == 5 %}
     <meta name="theme-color" content="#90d0c4" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#307064" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#4db3a0">
+    {% else %}
+    <meta name="theme-color" content="#ffb760" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#9f5800" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ff8c00">
+    {% endif %}
+    
     <!-- favicon declarations -->
     <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-touch-icon-60x60.png?v=0.0.2">
     <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon-76x76.png?v=0.0.2">
@@ -56,83 +79,11 @@
 
 <body>
     <div class="layout-site">
-        <nav class="olaf-navbar">
-            <!-- The following div (#nav-site-container) is here so that the following items naturally have the same width as the image. This is also handy because the #nav-site element gets its width defined through its col class (this is a defined width). This allows free positioning of the #nav-site-container inside that pre-defined box (#nav-site). -->
-            <div class="olaf-navbar__container">
-                <a href="index.html" class="olaf-navbar__brand">
-                    <img src="assets/images/oLaF_v1.png" alt="oLaF Logo">
-                    <p>oLaF <i>SFO</i></p>
-                </a>
-                <button class="olaf-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#olaf-navbar__nav" aria-controls="olaf-navbar__nav" aria-expanded="true" aria-label="Navigation ausklappen">
-                    <div class="olaf-navbar__toggler-icon">&#xF479;</div>
-                </button>
-                <!-- navbar toggler for mobile -->
-                <div id="olaf-navbar__nav" class="olaf-navbar__nav collapse show">
-                    <ul class="olaf-navbar__site">
-                        <li class="nav-item first">
-                            <a href="index.html" class="nav-link">
-                                <span class="nav-link__icon">&#xF845;</span> oLaF
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">
-                                <span class="nav-link__icon">&#xF431;</span> About
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="space.html" class="nav-link">
-                                <span class="nav-link__icon">&#xF308;</span>
-                                Space
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="projekte.html" class="nav-link">
-                                <span class="nav-link__icon">&#xF4A9;</span>
-                                Projekte
-                            </a>
-                        </li>
-                        <li class="nav-item last">
-                            <a href="foerderverein.html" class="nav-link active">
-                                <span class="nav-link__icon">&#xF3FC;</span>
-                                Förderverein
-                            </a>
-                        </li>
-                    </ul>
-                    <hr class="olaf-navbar__divider">
-                    <div class="olaf-navbar__socials">
-                        <a href="https://www.youtube.com/@oLaF-SFO" class="olaf-navbar__socials__link" target="_blank" id="youtube-link">
-                            <span class="olaf-navbar__socials__icon">&#xF62B;</span>
-                        </a>
-                        <a href="https://www.instagram.com/olaf.sfo/" class="olaf-navbar__socials__link" target="_blank" id="instagram-link">
-                            <span class="olaf-navbar__socials__icon">&#xF437;</span>
-                        </a>
-                        <a href="" class="olaf-navbar__socials__link" target="_blank" id="rss-link">
-                            <span class="olaf-navbar__socials__icon">&#xF522;</span>
-                        </a>
-                    </div>
-                    <div class="olaf-navbar__links">
-                        <a href="https://maker.schule">maker.schule</a>
-                        <a href="https://stein.schule">stein.schule</a>
-                    </div>
-                    <hr class="olaf-navbar__divider olaf-navbar__divider_end">
-                </div>
-                <script>
-                    // this script enables the use of the navbar on mobile devices with JavaScript disabled
-                    document.getElementsByClassName('olaf-navbar__toggler')[0].ariaExpanded = false;
-                    document.getElementById('olaf-navbar__nav').classList.remove('show');
-                </script>
-            </div>
-        </nav>
+        {% include "partials/navbar.njk" %}
         <div class="layout-navbar-spacer"></div>
         <main class="layout-main">
             <div class="layout-main__container">
-                <h1>Die Möglichmacher</h1>
-                <section id="foerderverein-introduction">
-                    <h2>oLaFF &mdash; offenes Labor Fulda Förderverein</h2>
-                    <p>
-                        rechtliches und tolle firmenlogos
-                    </p>
-                </section>
+                {{ content | safe }}
                 <footer class="olaf-footer">
                     <div id="cookie-prompt" style="display: none;">
                         <div class="alert">

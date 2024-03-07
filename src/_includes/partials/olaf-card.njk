@@ -1,0 +1,12 @@
+<article class="olaf-card {{ olafCardOptions }}">
+    <a class="__container" href="{{ olafCardLink }}">
+        <img class="__img" src="{{ olafCardImg }}" alt="">
+        <div class="__body">
+            <h3 class="__title">{{ olafCardTitle }}</h3>
+            <small class="__subtitle">{{ olafCardSubtitle | safe }}</small>
+            <p class="__text">
+                {{ olafCardText | safe }}
+            </p>
+        </div>
+    </a>
+</article>

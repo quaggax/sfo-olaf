@@ -1,0 +1,92 @@
+---
+layout: "base.njk"
+title: "Space"
+navActive: 3
+---
+<div id="transparency-alert" class="alert _red">
+    Die Funktion der Gallerie ist etwas eingeschränkt, weil JavaScript deaktiviert ist.
+    <br>
+    Bei uns wirst du nicht getrackt.
+    <br>
+    Für mehr Infos über Scripte und Software auf unserer Website kannst du dir <a href="tranzparenz.html">unsere Transparenz&#8209;Erklärung</a> ansehen.
+</div>
+<script>
+    /* Don't panic! This script removes a div element with a prompt to users blocking JavaScript. It's basically just a heads up that they may experience limited functionality. */
+    document.getElementById('transparency-alert').remove();
+</script>
+<h1>Der Macherraum</h1>
+<section id="space-carousel">
+    <div id="carouselExampleIndicators" class="carousel slide _slanted-corners" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="assets/images/banner.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="assets/images/about_banner.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="assets/images/download.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<section id="space-gallery" class="gallery">
+    <div id="space-gallery-container" class="row">
+        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Das ist ein Beispiel-Titel.">
+            <img src="assets/images/banner.png" alt="" class="_slanted-corners">
+            <small>Das ist ein Beispiel-Titel.</small>
+        </a>
+        <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Der Böhrer">
+            <img src="assets/images/download.png" alt="" class="_slanted-corners">
+            <small>Der Böhrer</small>
+        </a>
+        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Unsere Spülsabine">
+            <img src="assets/images/banner.png" alt="" class="_slanted-corners">
+            <small>Unsere Spülsabine</small>
+        </a>
+        <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4" data-caption="Unsere 3D-Drucker Kollektion">
+            <img src="assets/images/about_banner.png" alt="" class="_slanted-corners">
+            <small>Unsere 3D-Drucker Kollektion</small>
+        </a>
+        <a href="assets/images/about_banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
+            <img src="assets/images/about_banner.png" alt="" class="_slanted-corners">
+        </a>
+        <a href="assets/images/banner.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
+            <img src="assets/images/banner.png" alt="" class="_slanted-corners">
+        </a>
+        <a href="assets/images/download.png" class="d-block col-12 col-md-6 col-xxl-4 mb-4">
+            <img src="assets/images/download.png" alt="" class="_slanted-corners">
+        </a>
+    </div>
+    <link rel="stylesheet" href="assets/lib/simpleLightbox/simpleLightbox.min.css">
+    <link rel="stylesheet" href="assets/css/simpleLightbox-adjusts.css">
+    <script src="assets/lib/simpleLightbox/simpleLightbox.min.js"></script>
+    <script>
+        var SimpleLightbox = window.SimpleLightbox;
+
+        // customize / localize controls captions
+        SimpleLightbox.defaults.closeBtnCaption = 'Schließen';
+        SimpleLightbox.defaults.nextBtnCaption = 'Weiter';
+        SimpleLightbox.defaults.prevBtnCaption = 'Zurück';
+        SimpleLightbox.defaults.loadingCaption = 'Der Server rennt...';
+
+        SimpleLightbox.defaults.captionAttribute = "data-caption"; // choose data source for library to glean image caption from
+
+        new SimpleLightbox({
+            elements: '#space-gallery-container a'
+        });
+    </script>
+</section>

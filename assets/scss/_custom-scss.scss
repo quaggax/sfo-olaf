@@ -59,12 +59,12 @@ a {
         color: var(--olaf-link-visited);
     }
 
-    &.external:not(.olaf-navbar__socials a)::after,
-    &[href*="://"]:not(.olaf-navbar__socials a)::after,
-    &[href*="www."]:not(.olaf-navbar__socials a)::after {
+    &.external::after,
+    &[href*="://"]:not([href*="olaf.one"])::after,
+    &[href*="www."]:not([href*="olaf.one"])::after {
         content: '\F1C5';
         display: inline-block;
-        font-family: 'bootstrap-icons', var(--bs-font-sans-serif);
+        font-family: 'bootstrap-icons';
         font-size: .8rem;
         padding-left: .2rem;
     }
@@ -162,6 +162,36 @@ hr {
     }
 }
 
+.olaf-synopsis {
+    @extend .my-2;
+    @extend .d-print-block;
+
+    display: none;
+    background-color: #ffffff;
+    
+    .__container {
+        @extend .d-flex;
+
+        padding: .5rem;
+    }
+
+    .__divider {
+        @extend .m-0;
+        @extend .d-print-block;
+
+        display: none;
+    }
+
+    .__img {
+        height: 3rem;
+        margin: .5rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
 
 .layout-site {
     @extend .row;
@@ -186,6 +216,23 @@ hr {
     }
 }
 
+.layout-row {
+    @extend .row;
+
+    &__col {
+        @extend .col-12;
+        @extend .col-md-6;
+        @extend .col-xxl-4;
+    }
+
+    &._one-row {
+        .layout-row__col:nth-child(n + 3) {
+            @extend .d-md-none;
+            @extend .d-xxl-block;
+        }
+    }
+}
+
 .olaf-navbar {
     @extend .navbar;
     @extend .navbar-expand-lg;
@@ -195,14 +242,14 @@ hr {
     @extend .p-0;
     @extend .print-d-none;
 
-    &__container {
+    .__container {
         @extend .d-flex;
         @extend .flex-lg-column;
         @extend .text-lg-start;
         @extend .text-center;
     }
 
-    &__brand {
+    .__brand {
         @extend .text-center;
         @extend .my-0;
         @extend .my-lg-2;
@@ -228,7 +275,7 @@ hr {
         }
     }
 
-    &__toggler {
+    .__toggler {
         @extend .navbar-toggler;
         @extend .btn;
 
@@ -239,7 +286,7 @@ hr {
             border: none;
         }
 
-        &-icon {
+        .__icon {
             @extend ._bootstrap-icons;
             @extend .fs-1;
 
@@ -249,12 +296,12 @@ hr {
             animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
         }
 
-        &[aria-expanded=true] &-icon {
+        &[aria-expanded=true] .__icon {
             transform: rotate(-90deg);
         }
     }
 
-    &__nav {
+    .__nav {
         @extend .navbar-collapse;
         @extend .flex-column;
 
@@ -267,7 +314,7 @@ hr {
         }
     }
 
-    &__site {
+    .__site {
         @extend .navbar-nav;
         @extend .flex-lg-column;
         @extend .text-start;
@@ -304,7 +351,7 @@ hr {
                 background-color: #{default-color(25)};
             }
 
-            &__icon {
+            .__icon {
                 @extend ._bootstrap-icons;
 
                 font-size: 21px;
@@ -332,7 +379,7 @@ hr {
         }
     }
 
-    &__socials {
+    .__socials {
         @extend .d-flex;
         @extend .flex-row;
         @extend .flex-wrap;
@@ -342,7 +389,7 @@ hr {
         width: 100%;
         color: var(--olaf-light-grey);
 
-        &__link {
+        .__link {
             @include olaf-link-reset();
 
             border: none;
@@ -354,14 +401,20 @@ hr {
                 color: var(--olaf-light-grey-75);
                 text-decoration: none;
             }
+
+            &::after {
+                content: '';
+                display: none;
+                // so the 'external link' icon doesn't show up
+            }
         }
 
-        &__icon {
+        .__icon {
             @extend ._bootstrap-icons;
         }
     }
 
-    &__links {
+    .__links {
         @extend .flex-lg-column;
         @extend .flex-row;
         @extend .flex-wrap;
@@ -376,10 +429,10 @@ hr {
         }
     }
 
-    &__divider {
+    .__divider {
         @extend .m-0;
 
-        &_end {
+        &._end {
             @extend .d-lg-none;
         }
     }
@@ -388,7 +441,7 @@ hr {
         & {
             margin: .5rem 0;
 
-            &__container {
+            .__container {
                 flex-wrap: inherit;
                 align-items: center;
                 justify-content: space-between;
@@ -396,7 +449,7 @@ hr {
                 padding: 0 1rem;
             }
 
-            &__brand {
+            .__brand {
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
@@ -413,19 +466,19 @@ hr {
             left: 0;
             z-index: 10;
 
-            &__container {
+            .__container {
                 height: 100vh;
                 overflow: scroll;
                 margin: 0 1.5rem;
             }
 
-            &__brand img {
+            .__brand img {
                 height: auto;
                 max-height: 20vh !important;
                 max-width: 100%;
             }
 
-            &__links {
+            .__links {
                 width: 100%;
             }
         }
@@ -463,6 +516,8 @@ section {
 
 .olaf-image {
     .__container {
+        @extend .w-print-75;
+        
         display: flex;
         color: var(--olaf-text);
         width: 100%;
@@ -485,6 +540,10 @@ section {
 
         padding-left: .625rem;
         line-height: 1;
+
+        @media print {
+            padding-left: 0;
+        }
     }
 
     &._jumbotron {
@@ -519,7 +578,14 @@ section {
     }
 }
 
-// no .olaf-text styling needed. just simple html inside
+.olaf-text {
+    &+& {
+        @extend .pt-3;
+        @extend .border-top;
+
+        --bs-border-color: var(--olaf-light-grey-25);
+    }
+}
 
 .olaf-cta-group {
     text-align: center;
@@ -530,23 +596,6 @@ section {
         --bs-btn-padding-y: 0.5rem;
         --bs-btn-padding-x: 1rem;
         --bs-btn-font-size: 1.25rem;
-    }
-}
-
-.olaf-row {
-    @extend .row;
-
-    .__col {
-        @extend .col-12;
-        @extend .col-md-6;
-        @extend .col-xxl-4;
-    }
-
-    &._one-row {
-        .__col:nth-child(n + 3) {
-            @extend .d-md-none;
-            @extend .d-xxl-block;
-        }
     }
 }
 
@@ -687,6 +736,16 @@ section {
     text-decoration: none;
 }
 
+table {
+    th, td {
+        vertical-align: top;
+    }
+
+    th {
+        @extend .pe-2;
+    }
+}
+
 .olaf-footer {
     @extend .print-d-none;
 
@@ -763,16 +822,6 @@ section {
     }
 }
 
-#about-history p {
-    display: flex;
-    flex-direction: row;
-}
-
-#about-history p time {
-    min-width: 5ch;
-    /* the unit "ch" is the width of one "0". these are years (4 digits) so there is an extra space before the text starts */
-}
-
 #event-data time {
     font-family: var(--olaf-font);
     font-weight: 600;
@@ -801,21 +850,6 @@ section {
 
     .print-d-block {
         display: block !important;
-    }
-
-    #olaf-synopsis {
-        display: block !important;
-        background-color: #ffffff;
-        padding: .5rem;
-
-        img {
-            height: 3rem;
-            margin: .5rem;
-        }
-
-        p:last-child {
-            margin-bottom: 0;
-        }
     }
 
 

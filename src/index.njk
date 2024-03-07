@@ -1,0 +1,222 @@
+---
+layout: "base.njk"
+title: "Home"
+navActive: 1
+---
+<h1 class="visually-hidden">oLaF SFO &ndash; das offene Labor Fulda</h1>
+<section id="announcements">
+    <h2 class="visually-hidden">Ankündigungen</h2>
+    
+    {% set annoucementAlertContent %}
+    Wir sind immer noch das oLaF! Jetzt aber auch <b>Schülerforschungszentrum Osthessen (SFO)</b> mit neuem Logo!
+    {% endset %}
+    {% include "partials/annoucement-alert.njk" %}
+
+    {% set annoucementAlertContent %}
+    Das ist eine ganz tolle Ankündigung :D
+    {% endset %}
+    {% include "partials/annoucement-alert.njk" %}
+    <hr>
+</section>
+
+
+{% set olafImageUrl %}
+assets/images/banner.png
+{% endset %}
+{% set olafImageOptions %}
+_jumbotron
+{% endset %}
+{% set olafImageCaption %}
+Machen ist wie wollen, nur krasser!
+{% endset %}
+{% include "partials/olaf-image.njk" %}
+
+
+{% set alertMessage %}
+Das oLaF ist <b>dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr</b> geöffnet!
+{% endset %}
+{% include "partials/olaf-alert.njk" %}
+
+
+{% set olafTextContent %}
+<p>
+    Das offene Labor Fulda (oLaF) ist <b>Schülerforschungszentrum Osthessen</b> (SFO) und ein <b>Makerspace</b>. Die Räumlichkeiten direkt in der Freiherr-vom-Stein-Schule bieten außerunterrichtlich viele Möglichkeiten zum Experimentieren und Tüfteln im MINT Bereich.
+    <br>
+    Das oLaF ist ein Ort der Begegnung und des freien Lernens. Jeder ist willkommen, sich intellektuell zu fordern oder einer der spontanen informellen Debatten anzuschließen.
+</p>
+{% endset %}
+{% include "partials/olaf-text.njk" %}
+
+
+{% set olafCtaOptions %}
+_lg
+{% endset %}
+{% set olafCtaLink %}
+about/
+{% endset %}
+{% set olafCtaText %}
+Mehr über oLaF
+{% endset %}
+{% set olafCtaColor %}
+_accent
+{% endset %}
+{% include "partials/olaf-cta.njk" %}
+
+
+{% include "partials/spacer.njk" %}
+
+
+<section id="events">
+    <h2>Events</h2>
+    <div id="future-events">
+        <h3 class="visually-hidden">Zukunft</h3>
+        <div class="layout-row">
+            <div class="layout-row__col">
+                {% set olafCardLink %}
+                event/
+                {% endset %}
+                {% set olafCardOptions %}
+                _bg-img
+                {% endset %}
+                {% set olafCardImg %}
+                https://olaf.one/images/tux.png
+                {% endset %}
+                {% set olafCardTitle %}
+                oLaF Nacht
+                {% endset %}
+                {% set olafCardSubtitle %}
+                <time datetime="">TT.MM.JJJJ</time>
+                {% endset %}
+                {% set olafCardText %}
+                Am TT.MM findet wieder eine oLaF Nacht statt.
+                <br>
+                Wenn ihr dabei sein wollt, tragt euch bitte auf der Liste im oLaF ein oder meldet euch per eMail.
+                {% endset %}
+                {% include "partials/olaf-card.njk" %}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <script src="assets/lib/masonry-layout/masonry.pkgd.min.js"></script>
+    <div id="past-events">
+        <h2 class="visually-hidden">Vergangenheit</h2>
+        <div class="layout-row" data-masonry='{"itemSelector": ".layout-row__col", "columnWidth": ".layout-row__col", "percentPosition": true}'>
+            <div class="layout-row__col">
+                {% set olafCardLink %}
+                event/
+                {% endset %}
+                {% set olafCardOptions %}
+                _bg-img
+                {% endset %}
+                {% set olafCardImg %}
+                https://dc3.chaos.schule/Fairydust2.png
+                {% endset %}
+                {% set olafCardTitle %}
+                dc3.chaos.schule
+                {% endset %}
+                {% set olafCardSubtitle %}
+                <time datetime="">28.&ndash;30.12.2022</time>
+                {% endset %}
+                {% set olafCardText %}
+                Im oLaF nutzen unter dem Motto „dc3.chaos.schule – der Junior-Congress zum Jahresende“ rund 30 Personen den Junior-Congress als dezentrale Ersatz-Veranstaltung für den abgesagten Chaos Communication Congress.
+                {% endset %}
+                {% include "partials/olaf-card.njk" %}
+            </div>
+            <div class="layout-row__col">
+                {% set olafCardLink %}
+                event/
+                {% endset %}
+                {% set olafCardOptions %}
+                
+                {% endset %}
+                {% set olafCardImg %}{% endset %}
+                {% set olafCardTitle %}
+                Xmake kurz vor Xmas
+                {% endset %}
+                {% set olafCardSubtitle %}
+                <time datetime="">17.12.2022 10:00&ndash;15:00</time>
+                {% endset %}
+                {% set olafCardText %}
+                Xmake, die erste vorweihnachtliche Fuldaer MI(N)T-Maker-Messe!
+                {% endset %}
+                {% include "partials/olaf-card.njk" %}
+            </div>
+            <div class="layout-row__col">
+                {% set olafCardLink %}
+                event/
+                {% endset %}
+                {% set olafCardOptions %}
+                
+                {% endset %}
+                {% set olafCardImg %}{% endset %}
+                {% set olafCardTitle %}
+                24h oLaF, die lange Projektnacht
+                {% endset %}
+                {% set olafCardSubtitle %}
+                <time datetime="">25.&ndash;26.11.2022 15:00&ndash;15:00</time>
+                {% endset %}
+                {% set olafCardText %}
+                24h oLaF. Mal richtig Zeit für die eigenen Projekte! Und diese Zeit wurde gut genutzt, endlich standen wieder Projekte und gemeinsames Denken, Basteln und Coden im Mittelpunkt - mir hat die Projektnacht ausgesprochen gut gefallen und mit 28 Teilnehmer:innen war sie auch gut besucht!
+                {% endset %}
+                {% include "partials/olaf-card.njk" %}
+            </div>
+            <div class="layout-row__col">
+                {% set olafCardLink %}
+                event/
+                {% endset %}
+                {% set olafCardOptions %}
+                
+                {% endset %}
+                {% set olafCardImg %}{% endset %}
+                {% set olafCardTitle %}
+                KryptoLaF IO
+                {% endset %}
+                {% set olafCardSubtitle %}
+                <time datetime="">04.11.2022 15:00&ndash;19:00</time>
+                {% endset %}
+                {% set olafCardText %}
+                Unsere zweite Kryptoparty.
+                <br>
+                Es ging um Themen wie Warum Datenschutz? Wer ist Tux, der nette Pinguin? Was kann das Pi-Hole? Wie nutzt man einen Passwortmanager?
+                <br>
+                Rund 20 Teilnehmer:innen machten es zu einer sehr kurzweiligen Veranstaltung mit direktem Mehrwert für den alltäglichen Datenschutz.
+                {% endset %}
+                {% include "partials/olaf-card.njk" %}
+            </div>
+            <div class="layout-row__col">
+                {% set olafCardLink %}
+                event/
+                {% endset %}
+                {% set olafCardOptions %}
+                
+                {% endset %}
+                {% set olafCardImg %}{% endset %}
+                {% set olafCardTitle %}
+                Erstes Sommercamp im Schülerforschungszentrum Osthessen
+                {% endset %}
+                {% set olafCardSubtitle %}
+                <time datetime="">29.07.&ndash;03.08.2022</time>
+                {% endset %}
+                {% set olafCardText %}
+                Es fand das erste Jugend forscht orientierte SommerCamp mit zahlreichen Workshops und einer Abschlussfahrt zum Schülerforschungszentrum nach Kassel statt. Es kamen auch einige ehamalige oLaFs zu Besuch, so dass an den stärkeren Tagen über 20 Teilnehmer:innen im oLaF waren.
+                {% endset %}
+                {% include "partials/olaf-card.njk" %}
+            </div>
+        </div>
+    </div>
+
+
+    {% set olafCtaOptions %}
+    
+    {% endset %}
+    {% set olafCtaLink %}
+    index.html
+    {% endset %}
+    {% set olafCtaText %}
+    Weitere Events
+    {% endset %}
+    {% set olafCtaColor %}
+    
+    {% endset %}
+    {% include "partials/olaf-cta.njk" %}
+</section>

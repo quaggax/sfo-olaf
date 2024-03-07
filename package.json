@@ -4,8 +4,11 @@
   "description": "Development environment for the olaf.one website",
   "main": "index.js",
   "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
     "compile": "npm run css-compile; npm run js-compile",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css assets/scss/:assets/css/",
+    "css-compile-compressed": "sass --style compressed --source-map --embed-sources --no-error-css assets/scss/:assets/css/",
     "css-compile-watch": "sass --watch --style expanded --source-map --embed-sources --no-error-css assets/scss/:assets/css/",
     "js-compile": "ncp node_modules/masonry-layout/dist/masonry.pkgd.min.js assets/lib/masonry-layout/masonry.pkgd.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +20,7 @@
     "masonry-layout": "^4.2.2"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "ncp": "^2.0.0"
   }
 }

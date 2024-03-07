@@ -276,6 +276,10 @@ $olaf-link-visited-dmode: mix($olaf-violet, white, 62.5%);
     mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
     mask-repeat: no-repeat;
     mask-size: 51% 51%;
+
+    @media print {
+        mask: none;
+    }
 }
 
 @function default-color($value, $color: "grey") {
