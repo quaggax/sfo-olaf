@@ -11,6 +11,7 @@ function CookiesAcknowledged() {
 
 function ShowCookiePrompt() {
     cookiePrompt.style = "display: block;";
+    document.location = document.location.origin + document.location.pathname + "#" + cookiePrompt.id;
 }
 
 function HideCookiePrompt() {
