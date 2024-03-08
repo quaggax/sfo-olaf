@@ -1,0 +1,9 @@
+// adding 'print' media query to the width utilities
+$utilities: map-merge(
+  $utilities, (
+    "width": map-merge(
+      map-get($utilities, "width"),
+      ( print: true ),
+    ),
+  )
+);
