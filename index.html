@@ -67,35 +67,35 @@
             <p>oLaF <i>SFO</i></p>
         </a>
         <button class="__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#olaf-navbar__nav" aria-controls="olaf-navbar__nav" aria-expanded="true" aria-label="Navigation ausklappen">
-            <div class="__icon">&#xF479;</div>
+            <span class="__icon bi-list"></span>
         </button>
         <!-- navbar toggler for mobile -->
         <div id="olaf-navbar__nav" class="__nav collapse show">
             <ul class="__site">
-                <li class="nav-item first">
-                    <a href="index.html" class="nav-link active">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link _orange first active">
                         <span class="__icon bi-rocket-takeoff"></span> oLaF
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="about/" class="nav-link ">
+                    <a href="about/" class="nav-link _red ">
                         <span class="__icon bi-info-circle"></span> About
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="space/" class="nav-link ">
+                    <a href="space/" class="nav-link _violet ">
                         <span class="__icon bi-door-open"></span>
                         Space
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="projekte/" class="nav-link ">
+                    <a href="projekte/" class="nav-link _blue ">
                         <span class="__icon bi-nut"></span>
                         Projekte
                     </a>
                 </li>
-                <li class="nav-item last">
-                    <a href="foerderverein/" class="nav-link ">
+                <li class="nav-item">
+                    <a href="foerderverein/" class="nav-link _turquoise last ">
                         <span class="__icon bi-grid"></span>
                         Förderverein
                     </a>
@@ -130,24 +130,25 @@
         <main class="layout-main">
             <div class="layout-main__container">
                 <h1 class="visually-hidden">oLaF SFO &ndash; das offene Labor Fulda</h1>
-<section id="announcements">
+<div id="announcements">
     <h2 class="visually-hidden">Ankündigungen</h2>
+    <div data-fred-dropzone>
+        
+        <section class="alert">
     
-    
-    <div class="alert">
-    
-    Wir sind immer noch das oLaF! Jetzt aber auch <b>Schülerforschungszentrum Osthessen (SFO)</b> mit neuem Logo!
-    
-</div>
-
-    
-    <div class="alert">
-    
-    Das ist eine ganz tolle Ankündigung :D
-    
-</div>
-    <hr>
+        Wir sind immer noch das oLaF! Jetzt aber auch <b>Schülerforschungszentrum Osthessen (SFO)</b> mit neuem Logo!
+        
 </section>
+
+        
+        <section class="alert">
+    
+        Das ist eine ganz tolle Ankündigung :D
+        
+</section>
+        <hr>
+    </div>
+</div>
 
 
 
@@ -172,7 +173,7 @@ Machen ist wie wollen, nur krasser!
 
 <section class="alert">
     
-Das oLaF ist <b>dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr</b> geöffnet!
+<p>Das oLaF ist <b>dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr</b> geöffnet!</p>
 
 </section>
 
@@ -234,9 +235,14 @@ Mehr über oLaF
             <h3 class="__title">
                 oLaF Nacht
                 </h3>
-            <small class="__subtitle">
-                <time datetime="">TT.MM.JJJJ</time>
-                </small>
+            <div class="__subtitle">
+                
+                <div class="__datetime _future">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">TT.MM.JJJJ</time>
+                </div>
+                
+            </div>
             <p class="__text">
                 
                 Am TT.MM findet wieder eine oLaF Nacht statt.
@@ -275,9 +281,14 @@ Mehr über oLaF
             <h3 class="__title">
                 dc3.chaos.schule
                 </h3>
-            <small class="__subtitle">
-                <time datetime="">28.&ndash;30.12.2022</time>
-                </small>
+            <div class="__subtitle">
+                
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">28.&ndash;30.12.2022</time>
+                </div>
+                
+            </div>
             <p class="__text">
                 
                 Im oLaF nutzen unter dem Motto „dc3.chaos.schule – der Junior-Congress zum Jahresende“ rund 30 Personen den Junior-Congress als dezentrale Ersatz-Veranstaltung für den abgesagten Chaos Communication Congress.
@@ -305,9 +316,14 @@ Mehr über oLaF
             <h3 class="__title">
                 Xmake kurz vor Xmas
                 </h3>
-            <small class="__subtitle">
-                <time datetime="">17.12.2022 10:00&ndash;15:00</time>
-                </small>
+            <div class="__subtitle">
+                
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">17.12.2022 10:00&ndash;15:00</time>
+                </div>
+                
+            </div>
             <p class="__text">
                 
                 Xmake, die erste vorweihnachtliche Fuldaer MI(N)T-Maker-Messe!
@@ -335,9 +351,14 @@ Mehr über oLaF
             <h3 class="__title">
                 24h oLaF, die lange Projektnacht
                 </h3>
-            <small class="__subtitle">
-                <time datetime="">25.&ndash;26.11.2022 15:00&ndash;15:00</time>
-                </small>
+            <div class="__subtitle">
+                
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">25.&ndash;26.11.2022 15:00&ndash;15:00</time>
+                </div>
+                
+            </div>
             <p class="__text">
                 
                 24h oLaF. Mal richtig Zeit für die eigenen Projekte! Und diese Zeit wurde gut genutzt, endlich standen wieder Projekte und gemeinsames Denken, Basteln und Coden im Mittelpunkt - mir hat die Projektnacht ausgesprochen gut gefallen und mit 28 Teilnehmer:innen war sie auch gut besucht!
@@ -365,9 +386,14 @@ Mehr über oLaF
             <h3 class="__title">
                 KryptoLaF IO
                 </h3>
-            <small class="__subtitle">
-                <time datetime="">04.11.2022 15:00&ndash;19:00</time>
-                </small>
+            <div class="__subtitle">
+                
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">04.11.2022 15:00&ndash;19:00</time>
+                </div>
+                
+            </div>
             <p class="__text">
                 
                 Unsere zweite Kryptoparty.
@@ -399,9 +425,14 @@ Mehr über oLaF
             <h3 class="__title">
                 Erstes Sommercamp im Schülerforschungszentrum Osthessen
                 </h3>
-            <small class="__subtitle">
-                <time datetime="">29.07.&ndash;03.08.2022</time>
-                </small>
+            <div class="__subtitle">
+                
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">29.07.&ndash;03.08.2022</time>
+                </div>
+                
+            </div>
             <p class="__text">
                 
                 Es fand das erste Jugend forscht orientierte SommerCamp mit zahlreichen Workshops und einer Abschlussfahrt zum Schülerforschungszentrum nach Kassel statt. Es kamen auch einige ehamalige oLaFs zu Besuch, so dass an den stärkeren Tagen über 20 Teilnehmer:innen im oLaF waren.
