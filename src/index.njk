@@ -4,20 +4,21 @@ title: "Home"
 navActive: 1
 ---
 <h1 class="visually-hidden">oLaF SFO &ndash; das offene Labor Fulda</h1>
-<section id="announcements">
+<div id="announcements">
     <h2 class="visually-hidden">Ankündigungen</h2>
-    
-    {% set annoucementAlertContent %}
-    Wir sind immer noch das oLaF! Jetzt aber auch <b>Schülerforschungszentrum Osthessen (SFO)</b> mit neuem Logo!
-    {% endset %}
-    {% include "partials/annoucement-alert.njk" %}
+    <div data-fred-dropzone>
+        {% set alertMessage %}
+        Wir sind immer noch das oLaF! Jetzt aber auch <b>Schülerforschungszentrum Osthessen (SFO)</b> mit neuem Logo!
+        {% endset %}
+        {% include "partials/olaf-alert.njk" %}
 
-    {% set annoucementAlertContent %}
-    Das ist eine ganz tolle Ankündigung :D
-    {% endset %}
-    {% include "partials/annoucement-alert.njk" %}
-    <hr>
-</section>
+        {% set alertMessage %}
+        Das ist eine ganz tolle Ankündigung :D
+        {% endset %}
+        {% include "partials/olaf-alert.njk" %}
+        <hr>
+    </div>
+</div>
 
 
 {% set olafImageUrl %}
@@ -33,7 +34,7 @@ Machen ist wie wollen, nur krasser!
 
 
 {% set alertMessage %}
-Das oLaF ist <b>dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr</b> geöffnet!
+<p>Das oLaF ist <b>dienstags, mittwochs und donnerstags von 14:00-15:30 Uhr</b> geöffnet!</p>
 {% endset %}
 {% include "partials/olaf-alert.njk" %}
 
@@ -85,7 +86,10 @@ _accent
                 oLaF Nacht
                 {% endset %}
                 {% set olafCardSubtitle %}
-                <time datetime="">TT.MM.JJJJ</time>
+                <div class="__datetime _future">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">TT.MM.JJJJ</time>
+                </div>
                 {% endset %}
                 {% set olafCardText %}
                 Am TT.MM findet wieder eine oLaF Nacht statt.
@@ -115,7 +119,10 @@ _accent
                 dc3.chaos.schule
                 {% endset %}
                 {% set olafCardSubtitle %}
-                <time datetime="">28.&ndash;30.12.2022</time>
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">28.&ndash;30.12.2022</time>
+                </div>
                 {% endset %}
                 {% set olafCardText %}
                 Im oLaF nutzen unter dem Motto „dc3.chaos.schule – der Junior-Congress zum Jahresende“ rund 30 Personen den Junior-Congress als dezentrale Ersatz-Veranstaltung für den abgesagten Chaos Communication Congress.
@@ -134,7 +141,10 @@ _accent
                 Xmake kurz vor Xmas
                 {% endset %}
                 {% set olafCardSubtitle %}
-                <time datetime="">17.12.2022 10:00&ndash;15:00</time>
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">17.12.2022 10:00&ndash;15:00</time>
+                </div>
                 {% endset %}
                 {% set olafCardText %}
                 Xmake, die erste vorweihnachtliche Fuldaer MI(N)T-Maker-Messe!
@@ -153,7 +163,10 @@ _accent
                 24h oLaF, die lange Projektnacht
                 {% endset %}
                 {% set olafCardSubtitle %}
-                <time datetime="">25.&ndash;26.11.2022 15:00&ndash;15:00</time>
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">25.&ndash;26.11.2022 15:00&ndash;15:00</time>
+                </div>
                 {% endset %}
                 {% set olafCardText %}
                 24h oLaF. Mal richtig Zeit für die eigenen Projekte! Und diese Zeit wurde gut genutzt, endlich standen wieder Projekte und gemeinsames Denken, Basteln und Coden im Mittelpunkt - mir hat die Projektnacht ausgesprochen gut gefallen und mit 28 Teilnehmer:innen war sie auch gut besucht!
@@ -172,7 +185,10 @@ _accent
                 KryptoLaF IO
                 {% endset %}
                 {% set olafCardSubtitle %}
-                <time datetime="">04.11.2022 15:00&ndash;19:00</time>
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">04.11.2022 15:00&ndash;19:00</time>
+                </div>
                 {% endset %}
                 {% set olafCardText %}
                 Unsere zweite Kryptoparty.
@@ -195,7 +211,10 @@ _accent
                 Erstes Sommercamp im Schülerforschungszentrum Osthessen
                 {% endset %}
                 {% set olafCardSubtitle %}
-                <time datetime="">29.07.&ndash;03.08.2022</time>
+                <div class="__datetime">
+                    <span class="__icon bi-calendar2-week" aria-label="Datum" role="img"></span>
+                    <time datetime="">29.07.&ndash;03.08.2022</time>
+                </div>
                 {% endset %}
                 {% set olafCardText %}
                 Es fand das erste Jugend forscht orientierte SommerCamp mit zahlreichen Workshops und einer Abschlussfahrt zum Schülerforschungszentrum nach Kassel statt. Es kamen auch einige ehamalige oLaFs zu Besuch, so dass an den stärkeren Tagen über 20 Teilnehmer:innen im oLaF waren.

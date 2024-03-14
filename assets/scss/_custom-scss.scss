@@ -110,6 +110,14 @@ hr {
     @include slanted-corners();
 }
 
+.__datetime {
+    color: var(--olaf-violet);
+
+    &._future, ._future {
+        color: var(--olaf-orange);
+    }
+}
+
 .btn {
     @include olaf-link-reset();
 
@@ -136,6 +144,10 @@ hr {
     border-bottom: none;
 
     @include slanted-corners();
+
+    :last-child {
+        margin-bottom: 0;
+    }
 }
 
 .olaf-breadcrumb {
@@ -218,17 +230,17 @@ hr {
 
 .layout-row {
     @extend .row;
-
-    &__col {
-        @extend .col-12;
-        @extend .col-md-6;
-        @extend .col-xxl-4;
-    }
+    @extend .row-cols-md-2;
+    @extend .row-cols-xxl-3;
 
     &._one-row {
         .layout-row__col:nth-child(n + 3) {
             @extend .d-md-none;
             @extend .d-xxl-block;
+        }
+
+        .layout-row__col:nth-child(n + 4) {
+            @extend .d-none;
         }
     }
 }
@@ -286,8 +298,7 @@ hr {
             border: none;
         }
 
-        .__icon {
-            @extend ._bootstrap-icons;
+        .__icon::before {
             @extend .fs-1;
 
             transition-duration: .3s;
@@ -296,7 +307,7 @@ hr {
             animation-timing-function: cubic-bezier(0.2, 0.0, 0, 1.0);
         }
 
-        &[aria-expanded=true] .__icon {
+        &[aria-expanded=true] .__icon::before {
             transform: rotate(-90deg);
         }
     }
@@ -338,7 +349,7 @@ hr {
 
             letter-spacing: .1rem;
             transition: none;
-            line-height: normal;
+            line-height: 1em;
 
             @include slanted-corners();
 
@@ -351,31 +362,10 @@ hr {
                 background-color: #{default-color(25)};
             }
 
-            .__icon {
-                @extend ._bootstrap-icons;
-
-                font-size: 21px;
+            .__icon::before {
+                font-size: 1.3125em;
+                vertical-align: text-bottom;
             }
-        }
-
-        .nav-item:nth-child(1) {
-            @extend ._orange;
-        }
-
-        .nav-item:nth-child(2) {
-            @extend ._red;
-        }
-
-        .nav-item:nth-child(3) {
-            @extend ._violet;
-        }
-
-        .nav-item:nth-child(4) {
-            @extend ._blue;
-        }
-
-        .nav-item:nth-child(5) {
-            @extend ._turquoise;
         }
     }
 
@@ -407,10 +397,6 @@ hr {
                 display: none;
                 // so the 'external link' icon doesn't show up
             }
-        }
-
-        .__icon {
-            @extend ._bootstrap-icons;
         }
     }
 
@@ -652,9 +638,6 @@ section {
 
     .__title {
         @extend .card-title;
-        @extend .h4;
-
-        margin-bottom: 0;
     }
 
     .__subtitle {
@@ -662,9 +645,25 @@ section {
 
         --#{$prefix}card-subtitle-color: #{default-color(100, "light-grey")};
 
+        display: flex;
+        flex-wrap: wrap;
         font-weight: 600;
         letter-spacing: .1rem;
         text-transform: uppercase;
+
+        > * {
+            display: flex;
+        }
+
+        .__icon::before {
+            padding-right: .25em;
+        }
+        
+        div+div::before {
+            content: '\002022';
+            padding: 0 .25em;
+            color: var(--#{$prefix}card-subtitle-color);
+        }
     }
 
     .__text {
@@ -774,10 +773,6 @@ table {
         padding: .5rem;
     }
 
-    .__toggle-icon {
-        @extend ._bootstrap-icons;
-    }
-
     #toggle-auto-mode {
         vertical-align: middle;
 
@@ -805,6 +800,11 @@ table {
 
             a {
                 color: var(--olaf-light-grey);
+                padding: 0 .25rem;
+
+                &:last-child {
+                    padding-right: 0;
+                }
             }
         }
     }
@@ -822,20 +822,36 @@ table {
     }
 }
 
-#event-data time {
-    font-family: var(--olaf-font);
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    color: var(--olaf-violet);
-}
+.post-data {
+    .__metadata {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: var(--olaf-font);
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        color: var(--olaf-grey);
 
-#project-data span {
-    font-family: var(--olaf-font);
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    color: var(--olaf-grey);
+        > * {
+            display: flex;
+        }
+    }
+
+    .__location {
+        font-weight: 500;
+        letter-spacing: 0;
+        text-transform: none;
+    }
+
+    .__icon::before {
+        padding-right: .25em;
+    }
+    
+    div+div::before {
+        content: '\002022';
+        padding: 0 .25em;
+        color: var(--olaf-grey);
+    }
 }
 
 

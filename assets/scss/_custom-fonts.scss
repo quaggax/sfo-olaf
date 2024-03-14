@@ -367,13 +367,3 @@
 $bootstrap-icons-font-dir: "../fonts/bootstrap-icons" !default;
 
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
-
-._bootstrap-icons {
-  font-family: 'bootstrap-icons';
-  vertical-align: bottom !important;
-
-  &::before {
-    vertical-align: 0 !important;
-    // VERY IMPORTANT because it resets to bootstrap-icons defined vertical-align property
-  }
-}

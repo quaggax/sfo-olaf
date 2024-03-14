@@ -3,7 +3,9 @@
         <img class="__img" src="{{ olafCardImg }}" alt="">
         <div class="__body">
             <h3 class="__title">{{ olafCardTitle }}</h3>
-            <small class="__subtitle">{{ olafCardSubtitle | safe }}</small>
+            <div class="__subtitle">
+                {{ olafCardSubtitle | safe }}
+            </div>
             <p class="__text">
                 {{ olafCardText | safe }}
             </p>
