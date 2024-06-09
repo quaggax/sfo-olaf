@@ -127,7 +127,9 @@ hr {
     --#{$prefix}btn-bg: #{default-color(75, "light-grey")};
     --#{$prefix}btn-hover-bg: #{default-color(50, "light-grey")};
     --#{$prefix}btn-active-bg: #{default-color(25, "light-grey")};
+    --#{$prefix}btn-disabled-bg: #{default-color(25, "light-grey")};
     --#{$prefix}btn-border-width: 0;
+    --#{$prefix}border-width: 0;
 
     @include slanted-corners();
 }
@@ -241,6 +243,24 @@ hr {
 
         .layout-row__col:nth-child(n + 4) {
             @extend .d-none;
+        }
+    }
+
+    &._full-width {
+        @extend .row-cols-1;
+
+        .olaf-card {
+            @include media-breakpoint-down(lg) {
+                .__img {
+                    aspect-ratio: 1/1;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                .__img {
+                    aspect-ratio: 8/5;
+                }
+            }
         }
     }
 }
@@ -577,11 +597,29 @@ section {
     text-align: center;
     margin-bottom: 1rem;
 
+    .btn {
+        @extend .mx-1;
+    }
+
     /* copied from bootstrap class (.btn-lg) to make button larger */
     &._lg>.btn {
-        --bs-btn-padding-y: 0.5rem;
-        --bs-btn-padding-x: 1rem;
-        --bs-btn-font-size: 1.25rem;
+        --#{$prefix}btn-padding-y: 0.5rem;
+        --#{$prefix}btn-padding-x: 1rem;
+        --#{$prefix}btn-font-size: 1.25rem;
+    }
+}
+
+.olaf-btn-group {
+    text-align: center;
+    
+    .__container {
+        @extend .btn-group;
+    
+        @include slanted-corners();
+    
+        a, span {
+            mask: none;
+        }
     }
 }
 
@@ -718,6 +756,46 @@ section {
             position: absolute;
             bottom: 0;
             color: var(--olaf-always-white);
+        }
+    }
+}
+
+.olaf-downloads {
+    .__container {
+        @extend .list-group;
+        @extend .list-group-flush;
+    
+        $olaf-downloads-border-width: .5rem;
+    
+        --#{$prefix}list-group-color: var(--olaf-text);
+        --#{$prefix}list-group-bg: #{default-color(25)};
+        --#{$prefix}list-group-border-color: #{default-color(50)};
+        --#{$prefix}list-group-border-width: #{$list-group-border-width};
+        --#{$prefix}list-group-border-radius: #{$list-group-border-radius};
+        --#{$prefix}list-group-item-padding-x: calc(#{$list-group-item-padding-x} - #{$olaf-downloads-border-width});
+        --#{$prefix}list-group-item-padding-y: #{$list-group-item-padding-y};
+        --#{$prefix}list-group-action-color: var(--olaf-text);
+        --#{$prefix}list-group-action-hover-color: var(--olaf-text);
+        --#{$prefix}list-group-action-hover-bg: #{default-color(50)};
+        --#{$prefix}list-group-action-active-color: var(--olaf-text);
+        --#{$prefix}list-group-action-active-bg: #{default-color(75)};
+        --#{$prefix}list-group-disabled-color: var(--olaf-text);
+        --#{$prefix}list-group-disabled-bg: #{default-color(25)};
+        --#{$prefix}list-group-active-color: var(--olaf-text);
+        --#{$prefix}list-group-active-bg: #{default-color(75)};
+        --#{$prefix}list-group-active-border-color: #{default-color(25)};
+    
+        border-left: #{$olaf-downloads-border-width} solid #{default-color(100)};
+    
+        @include slanted-corners();
+    
+        .__file {
+            @extend .list-group-item;
+            @extend .list-group-item-action;
+    
+            &::before {
+                padding-right: .25em;
+            }
         }
     }
 }

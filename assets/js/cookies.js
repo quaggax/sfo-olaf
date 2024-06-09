@@ -2,7 +2,7 @@
 
 function SetCookie(name, value, expires) {
     var domain = document.location.hostname;
-    document.cookie = name + "=" + value + ";expires=" + expires + ";domain=" + domain + ";secure";
+    document.cookie = name + "=" + value + ";expires=" + expires + ";domain=" + domain + ";path=/" + ";secure";
 }
 
 var dateNow = new Date();
