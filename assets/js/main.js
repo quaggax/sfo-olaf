@@ -96,10 +96,10 @@ function ExternalLinks() {
     var anchorElements = document.getElementsByTagName("a");
     for (var i = 0; i < anchorElements.length; i++) {
         var anchorElement = anchorElements[i];
-        anchorElement.getAttribute("href") && anchorElement.hostname !== location.hostname && (anchorElement.target = "_blank");
+        anchorElement.getAttribute("href") && anchorElement.hostname !== "" && anchorElement.hostname !== location.hostname && (anchorElement.target = "_blank");
         /* the && (logical AND) returns the value of the first 'false' expression (eg. empty string); if all expressions are true it returns the value of the last one. if there is a 'false' expression the rest of the statement isn't even called.
         read more here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation */
-        /* in this case the statements checks if the href attribute even has a value. if yes, the code comapres the anchors hostname to the current pages hostname. if they are different, the statement between the parenthesis is returned. this sets the target attribute to "_blank". */
+        /* in this case the statements checks if the href attribute even has a value. if yes, the code checks if the hostname of the href exists and continues if yes (it wouldn't exist while the href has a value if it for example contains a data URL like `data:`). then the code compares the anchors hostname to the current pages hostname. if they are different, the statement between the parenthesis is returned. this sets the target attribute to "_blank". */
     }
 }
 ExternalLinks();
